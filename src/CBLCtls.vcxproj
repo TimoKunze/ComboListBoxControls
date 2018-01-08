@@ -1,0 +1,713 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug - ANSI|Win32">
+      <Configuration>Debug - ANSI</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug - Unicode|Win32">
+      <Configuration>Debug - Unicode</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release - ANSI|Win32">
+      <Configuration>Release - ANSI</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release - Unicode|Win32">
+      <Configuration>Release - Unicode</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7FB059D7-0DCE-4FE7-9C29-F95F4B65FCFE}</ProjectGuid>
+    <RootNamespace>CBLCtls</RootNamespace>
+    <Keyword>AtlProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release - Unicode|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfAtl>Static</UseOfAtl>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug - Unicode|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfAtl>Static</UseOfAtl>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release - ANSI|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfAtl>Static</UseOfAtl>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug - ANSI|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfAtl>Static</UseOfAtl>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release - Unicode|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="Windows10SDK.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug - Unicode|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="Windows10SDK.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release - ANSI|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="Windows10SDK.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug - ANSI|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="Windows10SDK.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug - ANSI|Win32'">..\build\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug - ANSI|Win32'">..\build\$(Configuration)\tmp\</IntDir>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug - ANSI|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug - ANSI|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug - ANSI|Win32'">true</GenerateManifest>
+    <EmbedManifest Condition="'$(Configuration)|$(Platform)'=='Debug - ANSI|Win32'">true</EmbedManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release - ANSI|Win32'">..\build\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release - ANSI|Win32'">..\build\$(Configuration)\tmp\</IntDir>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release - ANSI|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release - ANSI|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release - ANSI|Win32'">true</GenerateManifest>
+    <EmbedManifest Condition="'$(Configuration)|$(Platform)'=='Release - ANSI|Win32'">true</EmbedManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug - Unicode|Win32'">..\build\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug - Unicode|Win32'">..\build\$(Configuration)\tmp\</IntDir>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug - Unicode|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug - Unicode|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug - Unicode|Win32'">true</GenerateManifest>
+    <EmbedManifest Condition="'$(Configuration)|$(Platform)'=='Debug - Unicode|Win32'">true</EmbedManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release - Unicode|Win32'">..\build\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release - Unicode|Win32'">..\build\$(Configuration)\tmp\</IntDir>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release - Unicode|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release - Unicode|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release - Unicode|Win32'">true</GenerateManifest>
+    <EmbedManifest Condition="'$(Configuration)|$(Platform)'=='Release - Unicode|Win32'">true</EmbedManifest>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug - ANSI|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug - ANSI|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug - ANSI|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug - Unicode|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug - Unicode|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug - Unicode|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release - ANSI|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release - ANSI|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release - ANSI|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release - Unicode|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release - Unicode|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release - Unicode|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug - ANSI|Win32'">.ocx</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug - Unicode|Win32'">.ocx</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release - ANSI|Win32'">.ocx</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release - Unicode|Win32'">.ocx</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">.ocx</TargetExt>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug - Unicode|Win32'">$(ProjectName)U</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release - Unicode|Win32'">$(ProjectName)U</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug - ANSI|Win32'">$(ProjectName)A</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release - ANSI|Win32'">$(ProjectName)A</TargetName>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug - ANSI|Win32'">D:\Projects\Libraries\WTL\Include;$(IncludePath);$(VCInstallDir)atlmfc\include</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug - Unicode|Win32'">D:\Projects\Libraries\WTL\Include;$(IncludePath);$(VCInstallDir)atlmfc\include</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release - ANSI|Win32'">D:\Projects\Libraries\WTL\Include;$(IncludePath);$(VCInstallDir)atlmfc\include</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release - Unicode|Win32'">D:\Projects\Libraries\WTL\Include;$(IncludePath);$(VCInstallDir)atlmfc\include</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">D:\Projects\Libraries\WTL\Include;$(IncludePath);$(VCInstallDir)atlmfc\include</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug - ANSI|Win32'">
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;_ANSI;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <WarningLevel>4</WarningLevel>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>res/CBLCtlsA.tlb</TypeLibraryName>
+      <HeaderFileName>CBLCtlsA.h</HeaderFileName>
+      <DllDataFileName>
+      </DllDataFileName>
+      <InterfaceIdentifierFileName>CBLCtlsA_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>CBLCtlsA_p.c</ProxyFileName>
+      <ErrorCheckAllocations>true</ErrorCheckAllocations>
+      <ErrorCheckBounds>true</ErrorCheckBounds>
+      <ErrorCheckEnumRange>true</ErrorCheckEnumRange>
+      <ErrorCheckRefPointers>true</ErrorCheckRefPointers>
+      <ErrorCheckStubData>true</ErrorCheckStubData>
+      <ValidateAllParameters>true</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_USRDLL;_ANSI;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <SmallerTypeCheck>true</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <OpenMPSupport>true</OpenMPSupport>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <BrowseInformation>
+      </BrowseInformation>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <EnablePREfast>false</EnablePREfast>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;_ANSI;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0000</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <RegisterOutput>true</RegisterOutput>
+      <AdditionalDependencies>comsuppw.lib;imm32.lib;windowscodecs.lib;strsafe.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)CBLCtlsA.ocx</OutputFile>
+      <ModuleDefinitionFile>.\CBLCtlsA.def</ModuleDefinitionFile>
+      <DelayLoadDLLs>uxtheme.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <IgnoreEmbeddedIDL>false</IgnoreEmbeddedIDL>
+      <TypeLibraryFile>
+      </TypeLibraryFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(IntDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <StripPrivateSymbols>
+      </StripPrivateSymbols>
+      <SubSystem>Windows</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <OptimizeReferences>
+      </OptimizeReferences>
+      <EnableCOMDATFolding>
+      </EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <SupportUnloadOfDelayLoadedDLL>true</SupportUnloadOfDelayLoadedDLL>
+      <ImportLibrary>$(IntDir)CBLCtlsA.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <Profile>false</Profile>
+    </Link>
+    <Manifest>
+      <GenerateCatalogFiles>false</GenerateCatalogFiles>
+      <TypeLibraryFile>
+      </TypeLibraryFile>
+      <RegistrarScriptFile>
+      </RegistrarScriptFile>
+      <ComponentFileName>
+      </ComponentFileName>
+      <UpdateFileHashes>false</UpdateFileHashes>
+    </Manifest>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release - ANSI|Win32'">
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;_ANSI;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <WarningLevel>4</WarningLevel>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>res/CBLCtlsA.tlb</TypeLibraryName>
+      <HeaderFileName>CBLCtlsA.h</HeaderFileName>
+      <DllDataFileName>
+      </DllDataFileName>
+      <InterfaceIdentifierFileName>CBLCtlsA_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>CBLCtlsA_p.c</ProxyFileName>
+      <ErrorCheckAllocations>true</ErrorCheckAllocations>
+      <ErrorCheckBounds>true</ErrorCheckBounds>
+      <ErrorCheckEnumRange>true</ErrorCheckEnumRange>
+      <ErrorCheckRefPointers>true</ErrorCheckRefPointers>
+      <ErrorCheckStubData>true</ErrorCheckStubData>
+      <ValidateAllParameters>true</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_USRDLL;_ANSI;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <OpenMPSupport>true</OpenMPSupport>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <EnablePREfast>false</EnablePREfast>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;_ANSI;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0000</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <RegisterOutput>true</RegisterOutput>
+      <AdditionalDependencies>comsuppw.lib;imm32.lib;windowscodecs.lib;strsafe.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)CBLCtlsA.ocx</OutputFile>
+      <ModuleDefinitionFile>.\CBLCtlsA.def</ModuleDefinitionFile>
+      <DelayLoadDLLs>uxtheme.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <IgnoreEmbeddedIDL>false</IgnoreEmbeddedIDL>
+      <TypeLibraryFile>
+      </TypeLibraryFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(IntDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <StripPrivateSymbols>$(OutDir)$(TargetName).pdb</StripPrivateSymbols>
+      <SubSystem>Windows</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <SupportUnloadOfDelayLoadedDLL>true</SupportUnloadOfDelayLoadedDLL>
+      <ImportLibrary>$(IntDir)CBLCtlsA.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <Profile>false</Profile>
+    </Link>
+    <Manifest>
+      <GenerateCatalogFiles>false</GenerateCatalogFiles>
+      <TypeLibraryFile>
+      </TypeLibraryFile>
+      <RegistrarScriptFile>
+      </RegistrarScriptFile>
+      <ComponentFileName>
+      </ComponentFileName>
+      <UpdateFileHashes>false</UpdateFileHashes>
+    </Manifest>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug - Unicode|Win32'">
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;_UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <WarningLevel>4</WarningLevel>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>res/CBLCtlsU.tlb</TypeLibraryName>
+      <OutputDirectory>
+      </OutputDirectory>
+      <HeaderFileName>CBLCtlsU.h</HeaderFileName>
+      <DllDataFileName>
+      </DllDataFileName>
+      <InterfaceIdentifierFileName>CBLCtlsU_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>CBLCtlsU_p.c</ProxyFileName>
+      <ErrorCheckAllocations>true</ErrorCheckAllocations>
+      <ErrorCheckBounds>true</ErrorCheckBounds>
+      <ErrorCheckEnumRange>true</ErrorCheckEnumRange>
+      <ErrorCheckRefPointers>true</ErrorCheckRefPointers>
+      <ErrorCheckStubData>true</ErrorCheckStubData>
+      <ValidateAllParameters>true</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_USRDLL;_UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <SmallerTypeCheck>true</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <OpenMPSupport>true</OpenMPSupport>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <BrowseInformation>
+      </BrowseInformation>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <EnablePREfast>false</EnablePREfast>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;_UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0000</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <RegisterOutput>true</RegisterOutput>
+      <AdditionalDependencies>comsuppw.lib;imm32.lib;windowscodecs.lib;strsafe.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)CBLCtlsU.ocx</OutputFile>
+      <ModuleDefinitionFile>.\CBLCtlsU.def</ModuleDefinitionFile>
+      <DelayLoadDLLs>uxtheme.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <IgnoreEmbeddedIDL>false</IgnoreEmbeddedIDL>
+      <TypeLibraryFile>
+      </TypeLibraryFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(IntDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <StripPrivateSymbols>
+      </StripPrivateSymbols>
+      <SubSystem>Windows</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <OptimizeReferences>
+      </OptimizeReferences>
+      <EnableCOMDATFolding>
+      </EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <SupportUnloadOfDelayLoadedDLL>true</SupportUnloadOfDelayLoadedDLL>
+      <ImportLibrary>$(IntDir)CBLCtlsU.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AllowIsolation>true</AllowIsolation>
+      <Profile>false</Profile>
+    </Link>
+    <Manifest>
+      <GenerateCatalogFiles>false</GenerateCatalogFiles>
+      <TypeLibraryFile>
+      </TypeLibraryFile>
+      <RegistrarScriptFile>
+      </RegistrarScriptFile>
+      <ComponentFileName>
+      </ComponentFileName>
+      <UpdateFileHashes>false</UpdateFileHashes>
+    </Manifest>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release - Unicode|Win32'">
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;_UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <WarningLevel>4</WarningLevel>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>res/CBLCtlsU.tlb</TypeLibraryName>
+      <HeaderFileName>CBLCtlsU.h</HeaderFileName>
+      <DllDataFileName>
+      </DllDataFileName>
+      <InterfaceIdentifierFileName>CBLCtlsU_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>CBLCtlsU_p.c</ProxyFileName>
+      <ErrorCheckAllocations>true</ErrorCheckAllocations>
+      <ErrorCheckBounds>true</ErrorCheckBounds>
+      <ErrorCheckEnumRange>true</ErrorCheckEnumRange>
+      <ErrorCheckRefPointers>true</ErrorCheckRefPointers>
+      <ErrorCheckStubData>true</ErrorCheckStubData>
+      <ValidateAllParameters>true</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_USRDLL;_UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <OpenMPSupport>true</OpenMPSupport>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <EnablePREfast>false</EnablePREfast>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;_UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0000</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <RegisterOutput>true</RegisterOutput>
+      <AdditionalDependencies>comsuppw.lib;imm32.lib;windowscodecs.lib;strsafe.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)CBLCtlsU.ocx</OutputFile>
+      <ModuleDefinitionFile>.\CBLCtlsU.def</ModuleDefinitionFile>
+      <DelayLoadDLLs>uxtheme.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <IgnoreEmbeddedIDL>false</IgnoreEmbeddedIDL>
+      <TypeLibraryFile>
+      </TypeLibraryFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(IntDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <StripPrivateSymbols>$(OutDir)$(TargetName).pdb</StripPrivateSymbols>
+      <SubSystem>Windows</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <SupportUnloadOfDelayLoadedDLL>true</SupportUnloadOfDelayLoadedDLL>
+      <ImportLibrary>$(IntDir)CBLCtlsU.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <Profile>false</Profile>
+    </Link>
+    <Manifest>
+      <GenerateCatalogFiles>false</GenerateCatalogFiles>
+      <TypeLibraryFile>
+      </TypeLibraryFile>
+      <RegistrarScriptFile>
+      </RegistrarScriptFile>
+      <ComponentFileName>
+      </ComponentFileName>
+      <UpdateFileHashes>false</UpdateFileHashes>
+    </Manifest>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AboutDlg.cpp" />
+    <ClCompile Include="APIWrapper.cpp" />
+    <ClCompile Include="CBLCtls.cpp" />
+    <ClCompile Include="ComboBox.cpp" />
+    <ClCompile Include="ComboBoxItem.cpp" />
+    <ClCompile Include="ComboBoxItems.cpp" />
+    <ClCompile Include="CommonProperties.cpp" />
+    <ClCompile Include="CWindowEx.cpp" />
+    <ClCompile Include="DriveComboBox.cpp" />
+    <ClCompile Include="DriveComboBoxItem.cpp" />
+    <ClCompile Include="DriveComboBoxItemContainer.cpp" />
+    <ClCompile Include="DriveComboBoxItems.cpp" />
+    <ClCompile Include="DriveTypeProperties.cpp" />
+    <ClCompile Include="EnumOLEVERB.cpp" />
+    <ClCompile Include="helpers.cpp" />
+    <ClCompile Include="ImageComboBox.cpp" />
+    <ClCompile Include="ImageComboBoxItem.cpp" />
+    <ClCompile Include="ImageComboBoxItemContainer.cpp" />
+    <ClCompile Include="ImageComboBoxItems.cpp" />
+    <ClCompile Include="ListBox.cpp" />
+    <ClCompile Include="ListBoxItem.cpp" />
+    <ClCompile Include="ListBoxItemContainer.cpp" />
+    <ClCompile Include="ListBoxItems.cpp" />
+    <ClCompile Include="SourceOLEDataObject.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug - ANSI|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug - Unicode|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release - ANSI|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release - Unicode|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="StringProperties.cpp" />
+    <ClCompile Include="TargetOLEDataObject.cpp" />
+    <ClCompile Include="VirtualComboBoxItem.cpp" />
+    <ClCompile Include="VirtualDriveComboBoxItem.cpp" />
+    <ClCompile Include="VirtualImageComboBoxItem.cpp" />
+    <ClCompile Include="VirtualListBoxItem.cpp" />
+    <ClCompile Include="CBLCtlsA_i.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug - ANSI|Win32'">
+      </PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug - Unicode|Win32'">true</ExcludedFromBuild>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug - Unicode|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release - ANSI|Win32'">
+      </PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release - Unicode|Win32'">true</ExcludedFromBuild>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release - Unicode|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="CBLCtlsU_i.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug - ANSI|Win32'">true</ExcludedFromBuild>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug - ANSI|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug - Unicode|Win32'">
+      </PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release - ANSI|Win32'">true</ExcludedFromBuild>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release - ANSI|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release - Unicode|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CBLCtlsA.def" />
+    <None Include="CBLCtlsU.def" />
+    <None Include="res\About.jpg" />
+    <None Include="res\CBLCtlsA.rgs" />
+    <None Include="res\CBLCtlsU.rgs" />
+    <None Include="res\ComboBoxA.bmp" />
+    <None Include="res\ComboBoxU.bmp" />
+    <None Include="res\DriveComboBoxA.bmp" />
+    <None Include="res\DriveComboBoxU.bmp" />
+    <None Include="res\ImageComboBoxA.bmp" />
+    <None Include="res\ImageComboBoxU.bmp" />
+    <None Include="res\ListBoxA.bmp" />
+    <None Include="res\ListBoxU.bmp" />
+    <None Include="res\Paypal.jpg" />
+    <None Include="res\ToolBar disabled.bmp" />
+    <None Include="res\ToolBar enabled.bmp" />
+    <None Include="res\ComboBoxA.rgs" />
+    <None Include="res\ComboBoxItemA.rgs" />
+    <None Include="res\ComboBoxItemsA.rgs" />
+    <None Include="res\ComboBoxItemsU.rgs" />
+    <None Include="res\ComboBoxItemU.rgs" />
+    <None Include="res\ComboBoxU.rgs" />
+    <None Include="res\CommonPropertiesA.rgs" />
+    <None Include="res\CommonPropertiesU.rgs" />
+    <None Include="res\DriveComboBoxA.rgs" />
+    <None Include="res\DriveComboBoxItemA.rgs" />
+    <None Include="res\DriveComboBoxItemContainerA.rgs" />
+    <None Include="res\DriveComboBoxItemContainerU.rgs" />
+    <None Include="res\DriveComboBoxItemsA.rgs" />
+    <None Include="res\DriveComboBoxItemsU.rgs" />
+    <None Include="res\DriveComboBoxItemU.rgs" />
+    <None Include="res\DriveComboBoxU.rgs" />
+    <None Include="res\DriveTypePropertiesA.rgs" />
+    <None Include="res\DriveTypePropertiesU.rgs" />
+    <None Include="res\ImageComboBoxA.rgs" />
+    <None Include="res\ImageComboBoxItemA.rgs" />
+    <None Include="res\ImageComboBoxItemContainerA.rgs" />
+    <None Include="res\ImageComboBoxItemContainerU.rgs" />
+    <None Include="res\ImageComboBoxItemsA.rgs" />
+    <None Include="res\ImageComboBoxItemsU.rgs" />
+    <None Include="res\ImageComboBoxItemU.rgs" />
+    <None Include="res\ImageComboBoxU.rgs" />
+    <None Include="res\ListBoxA.rgs" />
+    <None Include="res\ListBoxItemA.rgs" />
+    <None Include="res\ListBoxItemContainerA.rgs" />
+    <None Include="res\ListBoxItemContainerU.rgs" />
+    <None Include="res\ListBoxItemsA.rgs" />
+    <None Include="res\ListBoxItemsU.rgs" />
+    <None Include="res\ListBoxItemU.rgs" />
+    <None Include="res\ListBoxU.rgs" />
+    <None Include="res\OLEDataObjectA.rgs" />
+    <None Include="res\OLEDataObjectU.rgs" />
+    <None Include="res\StringPropertiesA.rgs" />
+    <None Include="res\StringPropertiesU.rgs" />
+    <None Include="res\VirtualComboBoxItemA.rgs" />
+    <None Include="res\VirtualComboBoxItemU.rgs" />
+    <None Include="res\VirtualDriveComboBoxItemA.rgs" />
+    <None Include="res\VirtualDriveComboBoxItemU.rgs" />
+    <None Include="res\VirtualImageComboBoxItemA.rgs" />
+    <None Include="res\VirtualImageComboBoxItemU.rgs" />
+    <None Include="res\VirtualListBoxItemA.rgs" />
+    <None Include="res\VirtualListBoxItemU.rgs" />
+    <None Include="..\doc\Unused parts of API.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="CBLCtlsA.idl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug - Unicode|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release - Unicode|Win32'">true</ExcludedFromBuild>
+    </Midl>
+    <Midl Include="CBLCtlsU.idl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug - ANSI|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release - ANSI|Win32'">true</ExcludedFromBuild>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="_IComboBoxEvents_CP.h" />
+    <ClInclude Include="_IComboBoxItemEvents_CP.h" />
+    <ClInclude Include="_IComboBoxItemsEvents_CP.h" />
+    <ClInclude Include="_IDriveComboBoxEvents_CP.h" />
+    <ClInclude Include="_IDriveComboBoxItemContainerEvents_CP.h" />
+    <ClInclude Include="_IDriveComboBoxItemEvents_CP.h" />
+    <ClInclude Include="_IDriveComboBoxItemsEvents_CP.h" />
+    <ClInclude Include="_IImageComboBoxEvents_CP.h" />
+    <ClInclude Include="_IImageComboBoxItemContainerEvents_CP.h" />
+    <ClInclude Include="_IImageComboBoxItemEvents_CP.h" />
+    <ClInclude Include="_IImageComboBoxItemsEvents_CP.h" />
+    <ClInclude Include="_IListBoxEvents_CP.h" />
+    <ClInclude Include="_IListBoxItemContainerEvents_CP.h" />
+    <ClInclude Include="_IListBoxItemEvents_CP.h" />
+    <ClInclude Include="_IListBoxItemsEvents_CP.h" />
+    <ClInclude Include="_IOLEDataObjectEvents_CP.h" />
+    <ClInclude Include="_IVirtualComboBoxItemEvents_CP.h" />
+    <ClInclude Include="_IVirtualDriveComboBoxItemEvents_CP.h" />
+    <ClInclude Include="_IVirtualImageComboBoxItemEvents_CP.h" />
+    <ClInclude Include="_IVirtualListBoxItemEvents_CP.h" />
+    <ClInclude Include="AboutDlg.h" />
+    <ClInclude Include="APIWrapper.h" />
+    <ClInclude Include="ClassFactory.h" />
+    <ClInclude Include="ComboBox.h" />
+    <ClInclude Include="ComboBoxItem.h" />
+    <ClInclude Include="ComboBoxItems.h" />
+    <ClInclude Include="CommonProperties.h" />
+    <ClInclude Include="CompilerFlags.h" />
+    <ClInclude Include="CWindowEx.h" />
+    <ClInclude Include="DispIDs.h" />
+    <ClInclude Include="DriveComboBox.h" />
+    <ClInclude Include="DriveComboBoxItem.h" />
+    <ClInclude Include="DriveComboBoxItemContainer.h" />
+    <ClInclude Include="DriveComboBoxItems.h" />
+    <ClInclude Include="DriveTypeProperties.h" />
+    <ClInclude Include="EnumOLEVERB.h" />
+    <ClInclude Include="helpers.h" />
+    <ClInclude Include="HyperLinkEx.h" />
+    <ClInclude Include="ICategorizeProperties.h" />
+    <ClInclude Include="ICreditsProvider.h" />
+    <ClInclude Include="ImageComboBox.h" />
+    <ClInclude Include="ImageComboBoxItem.h" />
+    <ClInclude Include="ImageComboBoxItemContainer.h" />
+    <ClInclude Include="ImageComboBoxItems.h" />
+    <ClInclude Include="IMouseHookHandler.h" />
+    <ClInclude Include="ListBox.h" />
+    <ClInclude Include="ListBoxItem.h" />
+    <ClInclude Include="ListBoxItemContainer.h" />
+    <ClInclude Include="ListBoxItems.h" />
+    <ClInclude Include="PropertyNotifySinkImpl.h" />
+    <ClInclude Include="SourceOLEDataObject.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="StringProperties.h" />
+    <ClInclude Include="TargetOLEDataObject.h" />
+    <ClInclude Include="VirtualComboBoxItem.h" />
+    <ClInclude Include="VirtualDriveComboBoxItem.h" />
+    <ClInclude Include="VirtualImageComboBoxItem.h" />
+    <ClInclude Include="VirtualListBoxItem.h" />
+    <ClInclude Include="CBLCtlsA.h" />
+    <ClInclude Include="CBLCtlsU.h" />
+    <ClInclude Include="res\resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="res\CBLCtls.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="res\CBLCtls.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

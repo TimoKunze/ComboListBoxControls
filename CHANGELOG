@@ -1,0 +1,173 @@
+Version 1.5.3 - DD/MM/YYYY
+
+- FIX: Right-clicking the drop-down list box control did close it.
+
+
+
+Version 1.5.2 - 30/07/2016
+
+- Fixed some memory leaks that occurred when firing certain events.
+
+
+
+Version 1.5.1 - 26/01/2016
+
+- FIX: The controls could crash during OLE drag'n'drop.
+- FIX: The controls could crash the other process during OLE drag'n'drop, especially when IOLEDataObject::SetDropDescription() had been called.
+
+
+
+Version 1.5.0 - 20/01/2016
+
+- Added the FinishOLEDragDrop method to each control. It should not be used if not really needed. It can be used to hide the drag image if execution of the OLEDragDrop event takes a long time or if a message is displayed from within this event.
+
+
+
+Version 1.4.1 - 12/08/2015
+
+- FIX: Some of the controls could crash when removing the only item by calling the Remove function.
+- Initial support for Windows 10.
+
+
+
+Version 1.4.0 - 29/05/2014
+
+- Added the XClick, and XDblClick events for support of the extended mouse buttons.
+- Extended the Mouse* events to support the extended mouse buttons.
+- Added the MouseWheel events for handling mouse wheel rotations.
+- Reactivated data-binding capabilities. When the library is registered, it will call regtlib.exe msdatsrc.tlb before registering itself. This seems to fix the mess caused by the broken Windows Update from the beginning of 2013.
+- FIX: The mouse events of the ComboBox and ImageComboBox control have been raised with slightly wrong coordinates.
+- FIX: The Font and MouseIcon properties could leak GDI resources.
+- Slightly reduced GDI resource usage.
+- Initial support for Windows 8.1.
+
+
+
+Version 1.3.1 - 02/09/2013
+
+- Fixed a crash that some users had on Windows 8, somehow related to system hibernate.
+
+
+
+Version 1.3.0 - 05/04/2013
+
+- Improved performance of item insertion and retrieval by up to factor 65 (no typo!).
+- Added a new sample "Performance Test" which demonstrates how to insert thousands of list box items within milliseconds.
+
+
+
+Version 1.2.5 - 24/03/2013
+
+- FIX: When the _IComboBoxEvents::TextChanged was raised, the IComboBox::Text property could still return the old text.
+- Disabled data-binding capabilities as they cause "Object library not registered" errors when adding the control library to the project. This problem might be related to a recent Windows Update.
+
+
+
+Version 1.2.4 - 18/10/2012
+
+- FIX: If the _IListBoxEvents::ContextMenu event was triggered by keyboard input, it has been fired for the wrong item.
+- FIX: The ResizedControlWindow event was not fired when it should have been fired.
+
+
+
+Version 1.2.3 - 22/09/2012
+
+- Some internal changes.
+- Reimplemented the subclassing code of the VB6 samples to make it more robust.
+- Added a new sample "Multiple Columns" which demonstrates how to use the OwnerDrawItem event to implement a ComboBox with multiple columns and (unselectable) header items.
+- Initial support for Windows 8.
+
+
+
+Version 1.2.2 - 12/02/2012
+
+- FIX: Currently unavailable remote drives did not show up in the DriveComboBox control.
+- Fixed a memory leak that occurred during drag'n'drop if Aero drag-images have been used.
+
+
+
+Version 1.2.1 - 20/05/2011
+
+- FIX: Disabling the controls did not move the keyboard focus to the next control in the tab order.
+- FIX: The ResizedControlWindow event was fired when actually nothing had changed.
+
+
+
+Version 1.2.0 - 07/01/2011
+
+- FIX: The controls could crash when they were destroyed.
+- FIX: The _IDriveComboBoxEvents::OLEReceivedNewData event did not get raised.
+- FIX: Due do a bug in Microsoft ATL, the controls could lose keyboard focus when they shouldn't. This problem occured in MDI applications only. Many thanks to Peter Schellenbach for his help.
+- Switched to Visual C++ 2010 and dropped support for Windows 2000.
+
+
+
+Version 1.1.3 - 07/11/2010
+
+- FIX: Visual Basic 6 didn't raise the Validate event correctly.
+- FIX: The _IComboBoxEvents::KeyDown and _IImageComboBoxEvents::KeyDown events could get raised twice for the RETURN and ESC keys.
+- FIX: The _IListBoxEvents::CaretChanged event did not get raised if the caret was changed via code.
+
+
+
+Version 1.1.2 - 13/05/2010
+
+- FIX: IOLEDataObject::SetDropDescription could cause crashes in other programs.
+- FIX: The ComboBox control still didn't work well with non-standard dpi settings, if version 5.x of comctl32.dll was used.
+
+
+
+Version 1.1.1 - 25/04/2010
+
+- Added a new property page that can be used to enter Unicode texts at design time.
+- FIX: IVirtualDriveComboBoxItem::DriveType and IVirtualDriveComboBoxItem::Path reported the wrong drive's properties due to an index-off-by-one problem.
+- FIX: The ComboBox' "Edit Field only" style didn't work well with non-standard dpi settings.
+
+
+
+Version 1.1.0 - 01/01/2010
+
+- Added the IDriveComboBoxItem::DriveTypesWithVolumeName property.
+- Improved performance.
+- FIX: IComboBoxItems::RemoveAll() failed if no filter was specified.
+- FIX: IDriveComboBoxItems::RemoveAll() failed if no filter was specified.
+- FIX: IImageComboBoxItems::RemoveAll() failed if no filter was specified.
+- FIX: IListBoxItems::RemoveAll() failed if no filter was specified.
+- FIX: If the controls were placed on a Form for which the KeyPreview feature was activated, the Form_Key* handler didn't receive key strokes like Alt+PgDown or Alt+Left, if the controls had the keyboard focus.
+- FIX: The 'shift' parameter that many events have, often missed the ALT key.
+- Deploy (stripped) symbols with the binaries to make debugging easier. This are the pdb files in case you wonder.
+
+
+
+Version 1.0.0 - 16/11/2009
+
+- Added the IComboBoxItem::GetRectangle() method.
+- Added the IDriveComboBoxItem::GetRectangle() method.
+- Added the IImageComboBoxItem::GetRectangle() method.
+- Extended _IComboBoxEvents::ListOLEDragDrop() by the parameter 'yToItemTop'.
+- Extended _IComboBoxEvents::ListOLEDragEnter() by the parameter 'yToItemTop'.
+- Extended _IComboBoxEvents::ListOLEDragLeave() by the parameter 'yToItemTop'.
+- Extended _IComboBoxEvents::ListOLEDragMouseMove() by the parameter 'yToItemTop'.
+- Extended _IDriveComboBoxEvents::ListOLEDragDrop() by the parameter 'yToItemTop'.
+- Extended _IDriveComboBoxEvents::ListOLEDragEnter() by the parameter 'yToItemTop'.
+- Extended _IDriveComboBoxEvents::ListOLEDragLeave() by the parameter 'yToItemTop'.
+- Extended _IDriveComboBoxEvents::ListOLEDragMouseMove() by the parameter 'yToItemTop'.
+- Extended _IImageComboBoxEvents::ListOLEDragDrop() by the parameter 'yToItemTop'.
+- Extended _IImageComboBoxEvents::ListOLEDragEnter() by the parameter 'yToItemTop'.
+- Extended _IImageComboBoxEvents::ListOLEDragLeave() by the parameter 'yToItemTop'.
+- Extended _IImageComboBoxEvents::ListOLEDragMouseMove() by the parameter 'yToItemTop'.
+- Extended _IListBoxEvents::OLEDragDrop() by the parameter 'yToItemTop'.
+- Extended _IListBoxEvents::OLEDragEnter() by the parameter 'yToItemTop'.
+- Extended _IListBoxEvents::OLEDragLeave() by the parameter 'yToItemTop'.
+- Extended _IListBoxEvents::OLEDragMouseMove() by the parameter 'yToItemTop'.
+- Removed the IDriveComboBox::ListBackColor and IDriveComboBox::ListForeColor properties, because they didn't work.
+- Removed the IImageComboBox::ListBackColor and IImageComboBox::ListForeColor properties, because they didn't work.
+- DriveComboBox: Don't try to read the volume names of removable drives.
+- FIX: IComboBoxItem::Text, IDriveComboBoxItem::Path, IDriveComboBoxItem::Text, IImageComboBoxItem::Text, IListBoxItem::Text could crash.
+- Added two WTL8 samples.
+
+
+
+Version 1.0.0 RC1 - 31/10/2009
+
+- First public release.

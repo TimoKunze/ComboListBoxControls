@@ -1,0 +1,43 @@
+HKCR
+{
+	CBLCtlsA.ListBox.1 = s 'TimoSoft ListBox Control 1.5 (ANSI)'
+	{
+		CLSID = s '{52E541A2-E9FE-4051-8EEC-D1D5972EA121}'
+		'Insertable'
+	}
+	CBLCtlsA.ListBox = s 'TimoSoft ListBox Control 1.5 (ANSI)'
+	{
+		CLSID = s '{52E541A2-E9FE-4051-8EEC-D1D5972EA121}'
+		CurVer = s 'CBLCtlsA.ListBox.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {52E541A2-E9FE-4051-8EEC-D1D5972EA121} = s 'TimoSoft ListBox Control 1.5 (ANSI)'
+		{
+			ProgID = s 'CBLCtlsA.ListBox.1'
+			VersionIndependentProgID = s 'CBLCtlsA.ListBox'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			ForceRemove 'Implemented Categories'
+			{
+				'{40FC6ED4-2438-11CF-A3DB-080036F12502}'
+				'{40FC6ED5-2438-11CF-A3DB-080036F12502}'
+				'{0DE86A57-2BAA-11CF-A229-00AA003D7352}'
+				'{0DE86A53-2BAA-11CF-A229-00AA003D7352}'
+			}
+			val AppID = s '%APPID%'
+			ForceRemove 'Control'
+			ForceRemove 'Insertable'
+			ForceRemove 'ToolboxBitmap32' = s '%MODULE%, 4'
+			'MiscStatus' = s '0'
+			{
+				'1' = s '%OLEMISC%'
+			}
+			'TypeLib' = s '{EE7B09EE-4DEB-47aa-8B0F-FA832AF08A0F}'
+			'Version' = s '1.5'
+		}
+	}
+}

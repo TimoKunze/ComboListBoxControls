@@ -1,0 +1,44 @@
+HKCR
+{
+	CBLCtlsA.ComboBox.1 = s 'TimoSoft ComboBox Control 1.5 (ANSI)'
+	{
+		CLSID = s '{AD7F527E-D514-4dc0-AE9F-1ED26DBDF287}'
+		'Insertable'
+	}
+	CBLCtlsA.ComboBox = s 'TimoSoft ComboBox Control 1.5 (ANSI)'
+	{
+		CLSID = s '{AD7F527E-D514-4dc0-AE9F-1ED26DBDF287}'
+		CurVer = s 'CBLCtlsA.ComboBox.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {AD7F527E-D514-4dc0-AE9F-1ED26DBDF287} = s 'TimoSoft ComboBox Control 1.5 (ANSI)'
+		{
+			ProgID = s 'CBLCtlsA.ComboBox.1'
+			VersionIndependentProgID = s 'CBLCtlsA.ComboBox'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			ForceRemove 'Implemented Categories'
+			{
+				'{40FC6ED4-2438-11CF-A3DB-080036F12502}'
+				'{40FC6ED5-2438-11CF-A3DB-080036F12502}'
+				'{0DE86A57-2BAA-11CF-A229-00AA003D7352}'
+				'{0DE86A53-2BAA-11CF-A229-00AA003D7352}'
+				'{157083E1-2368-11cf-87B9-00AA006C8166}'
+			}
+			val AppID = s '%APPID%'
+			ForceRemove 'Control'
+			ForceRemove 'Insertable'
+			ForceRemove 'ToolboxBitmap32' = s '%MODULE%, 1'
+			'MiscStatus' = s '0'
+			{
+				'1' = s '%OLEMISC%'
+			}
+			'TypeLib' = s '{EE7B09EE-4DEB-47aa-8B0F-FA832AF08A0F}'
+			'Version' = s '1.5'
+		}
+	}
+}

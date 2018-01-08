@@ -1,0 +1,110 @@
+The following parts of the ComboBox, ComboBoxEx32 and ListBox API (Windows 10) are not used:
+
+Control styles:
+---------------
+- CBS_NOINTEGRALHEIGHT (https://msdn.microsoft.com/en-us/library/bb775796.aspx)
+	-> not used by DriveComboBox and ImageComboBox, because ComboBoxEx32 always sets this style and it can't be removed or set after control creation
+- CBES_EX_NOSIZELIMIT (https://msdn.microsoft.com/en-us/library/bb775742.aspx)
+	-> not useful
+- LBS_COMBOBOX (https://msdn.microsoft.com/en-us/library/bb775149.aspx)
+	-> not useful
+- LBS_NOREDRAW (https://msdn.microsoft.com/en-us/library/bb775149.aspx)
+	-> could be used in get_DontRedraw(), but it's better to keep the DontRedraw code in sync with other controls
+
+Messages:
+---------
+- CB_ADDSTRING (https://msdn.microsoft.com/en-us/library/bb775828.aspx)
+	-> not used by DriveComboBox and ImageComboBox, because there's CBEM_INSERTITEM
+- CB_DELETESTRING (https://msdn.microsoft.com/en-us/library/bb775830.aspx)
+	-> not used by DriveComboBox and ImageComboBox, because there's CBEM_DELETEITEM
+- CB_DIR (https://msdn.microsoft.com/en-us/library/bb775832.aspx)
+	-> this is too old-fashioned
+- CB_GETCOMBOBOXINFO (https://msdn.microsoft.com/en-us/library/bb775839.aspx)
+	-> requires comctl32.dll 6.0 or newer
+	-> we use GetComboBoxInfo instead
+- CB_GETHORIZONTALEXTENT (https://msdn.microsoft.com/en-us/library/bb775857.aspx)
+	-> not used by DriveComboBox and ImageComboBox, because not working for ComboBoxEx32
+- CB_GETLOCALE (https://msdn.microsoft.com/en-us/library/bb775866.aspx)
+	-> not used by DriveComboBox and ImageComboBox, because string comparisons are done by ComboBoxEx32 and ComboBoxEx32 always uses the thread's locale
+- CB_GETMINVISIBLE (https://msdn.microsoft.com/en-us/library/bb775869.aspx)
+	-> not used by DriveComboBox and ImageComboBox, because not working for ComboBoxEx32 (due to CBS_NOINTEGRALHEIGHT being always set)
+- CB_INSERTSTRING (https://msdn.microsoft.com/en-us/library/bb775875.aspx)
+	-> not used by DriveComboBox and ImageComboBox, because there's CBEM_INSERTITEM
+- CB_SETHORIZONTALEXTENT (https://msdn.microsoft.com/en-us/library/bb775907.aspx)
+	-> not used by DriveComboBox and ImageComboBox, because not working for ComboBoxEx32
+- CB_SETLOCALE (https://msdn.microsoft.com/en-us/library/bb775913.aspx)
+	-> not used by DriveComboBox and ImageComboBox, because string comparisons are done by ComboBoxEx32 and ComboBoxEx32 always uses the thread's locale
+- CB_SETMINVISIBLE (https://msdn.microsoft.com/en-us/library/bb775915.aspx)
+	-> not used by DriveComboBox and ImageComboBox, because not working for ComboBoxEx32 (due to CBS_NOINTEGRALHEIGHT being always set)
+- CBEM_GETUNICODEFORMAT (https://msdn.microsoft.com/en-us/library/bb775781.aspx)
+	-> useful on Windows 9x only
+- CBEM_KILLCOMBOFOCUS (https://msdn.microsoft.com/en-us/library/bb775784.aspx)
+	-> internal message
+- CBEM_SETCOMBOFOCUS (https://msdn.microsoft.com/en-us/library/bb775785.aspx)
+	-> internal message
+- CBEM_SETUNICODEFORMAT (https://msdn.microsoft.com/en-us/library/bb775789.aspx)
+	-> useful on Windows 9x only
+- CBEM_SETWINDOWTHEME (https://msdn.microsoft.com/en-us/library/bb775790.aspx)
+	-> requires comctl32.dll 6.0 or newer
+	-> can be used easily via SendMessage()
+- LB_ADDFILE (https://msdn.microsoft.com/en-us/library/bb775165.aspx)
+	-> this is too old-fashioned
+- LB_DIR (https://msdn.microsoft.com/en-us/library/bb775185.aspx)
+	-> this is too old-fashioned
+- LB_GETLISTBOXINFO (https://msdn.microsoft.com/en-us/library/bb775208.aspx)
+	-> requires comctl32.dll 6.0 or newer
+	-> we use GetListBoxInfo instead
+- LB_ITEMFROMPOINT (https://msdn.microsoft.com/en-us/library/bb761323.aspx)
+	-> we use LBItemFromPt instead
+
+Notifications:
+--------------
+- CBN_DBLCLK (https://msdn.microsoft.com/en-us/library/bb775808.aspx)
+	-> is not needed
+- CBN_KILLFOCUS (https://msdn.microsoft.com/en-us/library/bb775818.aspx)
+	-> is not needed
+- DL_BEGINDRAG (https://msdn.microsoft.com/en-us/library/bb761717.aspx)
+	-> we use our own drag'n'drop implementation instead
+- DL_CANCELDRAG (https://msdn.microsoft.com/en-us/library/bb761719.aspx)
+	-> we use our own drag'n'drop implementation instead
+- DL_DRAGGING (https://msdn.microsoft.com/en-us/library/bb761721.aspx)
+	-> we use our own drag'n'drop implementation instead
+- DL_DROPPED (https://msdn.microsoft.com/en-us/library/bb761722.aspx)
+	-> we use our own drag'n'drop implementation instead
+- LBN_DBLCLK (https://msdn.microsoft.com/en-us/library/bb775153.aspx)
+	-> is not needed
+- LBN_KILLFOCUS (https://msdn.microsoft.com/en-us/library/bb775158.aspx)
+	-> is not needed
+- LBN_SELCANCEL (https://msdn.microsoft.com/en-us/library/bb775159.aspx)
+	-> it's not clear when it is sent (seems to be sent whenever the selection is changed by mouse)
+	-> might be useful if the list box is part of a combo box
+- WM_DELETEITEM (https://msdn.microsoft.com/en-us/library/bb761362.aspx)
+	-> we intercept LB_DELETESTRING and LB_RESETCONTENT instead
+- CBEN_DELETEITEM (https://msdn.microsoft.com/en-us/library/bb775756.aspx)
+	-> sent when receiving WM_DELETEITEM
+	-> not useful, because it is sent after the item has been deleted and it provides the item index and the item data only
+- CBEN_INSERTITEM (https://msdn.microsoft.com/en-us/library/bb775764.aspx)
+	-> sent after processing CBEM_INSERTITEM
+	-> could be used for the InsertedItem event, but it has no benefit over raising this event from the CBEM_INSERTITEM handler, which is required for the InsertingItem event anyway
+
+Structures:
+-----------
+- DRAGLISTINFO (https://msdn.microsoft.com/en-us/library/bb761715.aspx)
+	-> we use our own drag'n'drop implementation instead
+
+Flags:
+------
+
+
+Functions:
+----------
+- DlgDirListComboBox (https://msdn.microsoft.com/en-us/library/bb775935.aspx)
+	-> this is too old-fashioned
+- DlgDirSelectComboBoxEx (https://msdn.microsoft.com/en-us/library/bb775937.aspx)
+	-> this is too old-fashioned
+- DlgDirList (https://msdn.microsoft.com/en-us/library/bb761366.aspx)
+	-> this is too old-fashioned
+- DlgDirSelectEx (https://msdn.microsoft.com/en-us/library/bb761368.aspx)
+	-> this is too old-fashioned
+- MakeDragList (https://msdn.microsoft.com/en-us/library/bb761725.aspx)
+	-> we use our own drag'n'drop implementation instead

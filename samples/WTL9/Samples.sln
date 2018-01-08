@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "General", "General", "{F6AA36F3-7EA0-4A8F-A3C2-EABE26298519}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Owner Draw", "Owner Draw", "{741CCA91-5E7F-4585-8452-85138A2E744A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Events", "General\Events\Events.vcxproj", "{06BFA69C-4F33-4675-957B-BE5A1D245830}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FontsColors", "Owner Draw\Fonts and Colors\FontsColors.vcxproj", "{C584005C-E40E-41F9-BF54-8FF2A7C1F6C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06BFA69C-4F33-4675-957B-BE5A1D245830}.Debug|Win32.ActiveCfg = Debug|Win32
+		{06BFA69C-4F33-4675-957B-BE5A1D245830}.Debug|Win32.Build.0 = Debug|Win32
+		{06BFA69C-4F33-4675-957B-BE5A1D245830}.Release|Win32.ActiveCfg = Release|Win32
+		{06BFA69C-4F33-4675-957B-BE5A1D245830}.Release|Win32.Build.0 = Release|Win32
+		{C584005C-E40E-41F9-BF54-8FF2A7C1F6C6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C584005C-E40E-41F9-BF54-8FF2A7C1F6C6}.Release|Win32.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{06BFA69C-4F33-4675-957B-BE5A1D245830} = {F6AA36F3-7EA0-4A8F-A3C2-EABE26298519}
+		{C584005C-E40E-41F9-BF54-8FF2A7C1F6C6} = {741CCA91-5E7F-4585-8452-85138A2E744A}
+	EndGlobalSection
+EndGlobal

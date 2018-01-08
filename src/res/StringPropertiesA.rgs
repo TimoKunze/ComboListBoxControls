@@ -1,0 +1,25 @@
+HKCR
+{
+	CBLCtlsA.StringProperties.1 = s 'TimoSoft StringProperties Class 1.5 (ANSI)'
+	{
+		CLSID = s '{9F36779B-9AC3-48be-A798-01AE4075BC9A}'
+	}
+	CBLCtlsA.StringProperties = s 'TimoSoft StringProperties Class (ANSI)'
+	{
+		CLSID = s '{9F36779B-9AC3-48be-A798-01AE4075BC9A}'
+		CurVer = s 'CBLCtlsA.StringProperties.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {9F36779B-9AC3-48be-A798-01AE4075BC9A} = s 'TimoSoft StringProperties Class (ANSI)'
+		{
+			ProgID = s 'CBLCtlsA.StringProperties.1'
+			VersionIndependentProgID = s 'CBLCtlsA.StringProperties'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{EE7B09EE-4DEB-47aa-8B0F-FA832AF08A0F}'
+		}
+	}
+}

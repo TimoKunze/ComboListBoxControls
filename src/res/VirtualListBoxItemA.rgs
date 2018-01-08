@@ -1,0 +1,25 @@
+HKCR
+{
+	CBLCtlsA.VirtualListBoxItem.1 = s 'TimoSoft VirtualListBoxItem Class 1.5 (ANSI)'
+	{
+		CLSID = s '{96EAC4E3-3C84-40bc-9D49-3E97060EDE86}'
+	}
+	CBLCtlsA.VirtualListBoxItem = s 'TimoSoft VirtualListBoxItem Class (ANSI)'
+	{
+		CLSID = s '{96EAC4E3-3C84-40bc-9D49-3E97060EDE86}'
+		CurVer = s 'CBLCtlsA.VirtualListBoxItem.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {96EAC4E3-3C84-40bc-9D49-3E97060EDE86} = s 'TimoSoft VirtualListBoxItem Class (ANSI)'
+		{
+			ProgID = s 'CBLCtlsA.VirtualListBoxItem.1'
+			VersionIndependentProgID = s 'CBLCtlsA.VirtualListBoxItem'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{EE7B09EE-4DEB-47aa-8B0F-FA832AF08A0F}'
+		}
+	}
+}

@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CBLCtls", "CBLCtls.vcxproj", "{7FB059D7-0DCE-4FE7-9C29-F95F4B65FCFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug - ANSI|Win32 = Debug - ANSI|Win32
+		Debug - Unicode|Win32 = Debug - Unicode|Win32
+		Release - ANSI|Win32 = Release - ANSI|Win32
+		Release - Unicode|Win32 = Release - Unicode|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FB059D7-0DCE-4FE7-9C29-F95F4B65FCFE}.Debug - ANSI|Win32.ActiveCfg = Debug - ANSI|Win32
+		{7FB059D7-0DCE-4FE7-9C29-F95F4B65FCFE}.Debug - Unicode|Win32.ActiveCfg = Debug - Unicode|Win32
+		{7FB059D7-0DCE-4FE7-9C29-F95F4B65FCFE}.Release - ANSI|Win32.ActiveCfg = Release - ANSI|Win32
+		{7FB059D7-0DCE-4FE7-9C29-F95F4B65FCFE}.Release - Unicode|Win32.ActiveCfg = Release - Unicode|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

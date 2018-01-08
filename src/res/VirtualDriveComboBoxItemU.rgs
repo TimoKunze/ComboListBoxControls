@@ -1,0 +1,25 @@
+HKCR
+{
+	CBLCtlsU.VirtualDriveComboBoxItem.1 = s 'TimoSoft VirtualDriveComboBoxItem Class 1.5 (Unicode)'
+	{
+		CLSID = s '{AC0CD3EB-14BD-4674-8BC0-B333924D0BB8}'
+	}
+	CBLCtlsU.VirtualDriveComboBoxItem = s 'TimoSoft VirtualDriveComboBoxItem Class (Unicode)'
+	{
+		CLSID = s '{AC0CD3EB-14BD-4674-8BC0-B333924D0BB8}'
+		CurVer = s 'CBLCtlsU.VirtualDriveComboBoxItem.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {AC0CD3EB-14BD-4674-8BC0-B333924D0BB8} = s 'TimoSoft VirtualDriveComboBoxItem Class (Unicode)'
+		{
+			ProgID = s 'CBLCtlsU.VirtualDriveComboBoxItem.1'
+			VersionIndependentProgID = s 'CBLCtlsU.VirtualDriveComboBoxItem'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{FCCB83BF-E483-4317-9FF2-A460758238B5}'
+		}
+	}
+}

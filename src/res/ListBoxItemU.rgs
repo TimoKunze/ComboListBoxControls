@@ -1,0 +1,25 @@
+HKCR
+{
+	CBLCtlsU.ListBoxItem.1 = s 'TimoSoft ListBoxItem Class 1.5 (Unicode)'
+	{
+		CLSID = s '{BA46D1E6-F8CA-4958-8612-C0998D552479}'
+	}
+	CBLCtlsU.ListBoxItem = s 'TimoSoft ListBoxItem Class (Unicode)'
+	{
+		CLSID = s '{BA46D1E6-F8CA-4958-8612-C0998D552479}'
+		CurVer = s 'CBLCtlsU.ListBoxItem.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {BA46D1E6-F8CA-4958-8612-C0998D552479} = s 'TimoSoft ListBoxItem Class (Unicode)'
+		{
+			ProgID = s 'CBLCtlsU.ListBoxItem.1'
+			VersionIndependentProgID = s 'CBLCtlsU.ListBoxItem'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{FCCB83BF-E483-4317-9FF2-A460758238B5}'
+		}
+	}
+}

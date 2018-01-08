@@ -1,0 +1,25 @@
+HKCR
+{
+	CBLCtlsA.ComboBoxItems.1 = s 'TimoSoft ComboBoxItems Class 1.5 (ANSI)'
+	{
+		CLSID = s '{73205B8D-6B2E-4408-A345-524AFDA32A45}'
+	}
+	CBLCtlsA.ComboBoxItems = s 'TimoSoft ComboBoxItems Class (ANSI)'
+	{
+		CLSID = s '{73205B8D-6B2E-4408-A345-524AFDA32A45}'
+		CurVer = s 'CBLCtlsA.ComboBoxItems.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {73205B8D-6B2E-4408-A345-524AFDA32A45} = s 'TimoSoft ComboBoxItems Class (ANSI)'
+		{
+			ProgID = s 'CBLCtlsA.ComboBoxItems.1'
+			VersionIndependentProgID = s 'CBLCtlsA.ComboBoxItems'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{EE7B09EE-4DEB-47aa-8B0F-FA832AF08A0F}'
+		}
+	}
+}

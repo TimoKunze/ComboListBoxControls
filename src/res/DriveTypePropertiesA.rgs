@@ -1,0 +1,25 @@
+HKCR
+{
+	CBLCtlsA.DriveTypeProperties.1 = s 'TimoSoft DriveTypeProperties Class 1.5 (ANSI)'
+	{
+		CLSID = s '{5E759DA0-A826-4c27-A7F9-85456B8FE0EB}'
+	}
+	CBLCtlsA.DriveTypeProperties = s 'TimoSoft DriveTypeProperties Class (ANSI)'
+	{
+		CLSID = s '{5E759DA0-A826-4c27-A7F9-85456B8FE0EB}'
+		CurVer = s 'CBLCtlsA.DriveTypeProperties.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {5E759DA0-A826-4c27-A7F9-85456B8FE0EB} = s 'TimoSoft DriveTypeProperties Class (ANSI)'
+		{
+			ProgID = s 'CBLCtlsA.DriveTypeProperties.1'
+			VersionIndependentProgID = s 'CBLCtlsA.DriveTypeProperties'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{EE7B09EE-4DEB-47aa-8B0F-FA832AF08A0F}'
+		}
+	}
+}

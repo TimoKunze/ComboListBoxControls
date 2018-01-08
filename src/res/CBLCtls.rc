@@ -1,0 +1,399 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "winres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+#ifdef _UNICODE
+  IDB_COMBOBOX            BITMAP                  "ComboBoxU.bmp"
+  IDB_DRIVECOMBOBOX       BITMAP                  "DriveComboBoxU.bmp"
+  IDB_IMAGECOMBOBOX       BITMAP                  "ImageComboBoxU.bmp"
+  IDB_LISTBOX             BITMAP                  "ListBoxU.bmp"
+#else
+  IDB_COMBOBOX            BITMAP                  "ComboBoxA.bmp"
+  IDB_DRIVECOMBOBOX       BITMAP                  "DriveComboBoxA.bmp"
+  IDB_IMAGECOMBOBOX       BITMAP                  "ImageComboBoxA.bmp"
+  IDB_LISTBOX             BITMAP                  "ListBoxA.bmp"
+#endif
+IDB_TOOLBARENABLED      BITMAP                  "ToolBar enabled.bmp"
+IDB_TOOLBARDISABLED     BITMAP                  "ToolBar disabled.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// JPG
+//
+
+IDB_ABOUT               JPG                      "About.jpg"
+IDB_PAYPAL              JPG                      "Paypal.jpg"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION VERSION_MAJOR,VERSION_MINOR,VERSION_REVISION1,VERSION_BUILD
+ PRODUCTVERSION VERSION_MAJOR,VERSION_MINOR,VERSION_REVISION1,VERSION_BUILD
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "Designed for Visual Basic. This software is freeware!"
+#ifdef _UNICODE
+            VALUE "FileDescription", "ComboBox and ListBox ActiveX Controls (Unicode)"
+#else
+            VALUE "FileDescription", "ComboBox and ListBox ActiveX Controls (ANSI)"
+#endif
+            VALUE "FileVersion", STRFILEVERSION
+#ifdef _UNICODE
+            VALUE "InternalName", "CBLCtlsU.ocx"
+#else
+            VALUE "InternalName", "CBLCtlsA.ocx"
+#endif
+            VALUE "LegalCopyright", "Copyright (C) 2009-2018 Timo ""TimoSoft"" Kunze"
+#ifdef _UNICODE
+            VALUE "OriginalFilename", "CBLCtlsU.ocx"
+#else
+            VALUE "OriginalFilename", "CBLCtlsA.ocx"
+#endif
+            VALUE "ProductName", "TimoSoft ComboListBoxControls"
+            VALUE "ProductVersion", STRPRODUCTVERSION
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// REGISTRY
+//
+
+#ifdef _UNICODE
+  IDR_CBLCTLS                     REGISTRY                "CBLCtlsU.rgs"
+  IDR_COMBOBOX                    REGISTRY                "ComboBoxU.rgs"
+  IDR_COMBOBOXITEM                REGISTRY                "ComboBoxItemU.rgs"
+  IDR_COMBOBOXITEMS               REGISTRY                "ComboBoxItemsU.rgs"
+  IDR_VIRTUALCOMBOBOXITEM         REGISTRY                "VirtualComboBoxItemU.rgs"
+  IDR_DRIVECOMBOBOX               REGISTRY                "DriveComboBoxU.rgs"
+  IDR_DRIVECOMBOBOXITEM           REGISTRY                "DriveComboBoxItemU.rgs"
+  IDR_DRIVECOMBOBOXITEMS          REGISTRY                "DriveComboBoxItemsU.rgs"
+  IDR_DRIVECOMBOBOXITEMCONTAINER  REGISTRY                "DriveComboBoxItemContainerU.rgs"
+  IDR_VIRTUALDRIVECOMBOBOXITEM    REGISTRY                "VirtualDriveComboBoxItemU.rgs"
+  IDR_IMAGECOMBOBOX               REGISTRY                "ImageComboBoxU.rgs"
+  IDR_IMAGECOMBOBOXITEM           REGISTRY                "ImageComboBoxItemU.rgs"
+  IDR_IMAGECOMBOBOXITEMS          REGISTRY                "ImageComboBoxItemsU.rgs"
+  IDR_IMAGECOMBOBOXITEMCONTAINER  REGISTRY                "ImageComboBoxItemContainerU.rgs"
+  IDR_VIRTUALIMAGECOMBOBOXITEM    REGISTRY                "VirtualImageComboBoxItemU.rgs"
+  IDR_LISTBOX                     REGISTRY                "ListBoxU.rgs"
+  IDR_LISTBOXITEM                 REGISTRY                "ListBoxItemU.rgs"
+  IDR_LISTBOXITEMS                REGISTRY                "ListBoxItemsU.rgs"
+  IDR_LISTBOXITEMCONTAINER        REGISTRY                "ListBoxItemContainerU.rgs"
+  IDR_VIRTUALLISTBOXITEM          REGISTRY                "VirtualListBoxItemU.rgs"
+  IDR_OLEDATAOBJECT               REGISTRY                "OLEDataObjectU.rgs"
+  IDR_COMMONPROPERTIES            REGISTRY                "CommonPropertiesU.rgs"
+  IDR_DRIVETYPEPROPERTIES         REGISTRY                "DriveTypePropertiesU.rgs"
+  IDR_STRINGPROPERTIES            REGISTRY                "StringPropertiesU.rgs"
+#else
+  IDR_CBLCTLS                     REGISTRY                "CBLCtlsA.rgs"
+  IDR_COMBOBOX                    REGISTRY                "ComboBoxA.rgs"
+  IDR_COMBOBOXITEM                REGISTRY                "ComboBoxItemA.rgs"
+  IDR_COMBOBOXITEMS               REGISTRY                "ComboBoxItemsA.rgs"
+  IDR_VIRTUALCOMBOBOXITEM         REGISTRY                "VirtualComboBoxItemA.rgs"
+  IDR_DRIVECOMBOBOX               REGISTRY                "DriveComboBoxA.rgs"
+  IDR_DRIVECOMBOBOXITEM           REGISTRY                "DriveComboBoxItemA.rgs"
+  IDR_DRIVECOMBOBOXITEMS          REGISTRY                "DriveComboBoxItemsA.rgs"
+  IDR_DRIVECOMBOBOXITEMCONTAINER  REGISTRY                "DriveComboBoxItemContainerA.rgs"
+  IDR_VIRTUALDRIVECOMBOBOXITEM    REGISTRY                "VirtualDriveComboBoxItemA.rgs"
+  IDR_IMAGECOMBOBOX               REGISTRY                "ImageComboBoxA.rgs"
+  IDR_IMAGECOMBOBOXITEM           REGISTRY                "ImageComboBoxItemA.rgs"
+  IDR_IMAGECOMBOBOXITEMS          REGISTRY                "ImageComboBoxItemsA.rgs"
+  IDR_IMAGECOMBOBOXITEMCONTAINER  REGISTRY                "ImageComboBoxItemContainerA.rgs"
+  IDR_VIRTUALIMAGECOMBOBOXITEM    REGISTRY                "VirtualImageComboBoxItemA.rgs"
+  IDR_LISTBOX                     REGISTRY                "ListBoxA.rgs"
+  IDR_LISTBOXITEM                 REGISTRY                "ListBoxItemA.rgs"
+  IDR_LISTBOXITEMS                REGISTRY                "ListBoxItemsA.rgs"
+  IDR_LISTBOXITEMCONTAINER        REGISTRY                "ListBoxItemContainerA.rgs"
+  IDR_VIRTUALLISTBOXITEM          REGISTRY                "VirtualListBoxItemA.rgs"
+  IDR_OLEDATAOBJECT               REGISTRY                "OLEDataObjectA.rgs"
+  IDR_COMMONPROPERTIES            REGISTRY                "CommonPropertiesA.rgs"
+  IDR_DRIVETYPEPROPERTIES         REGISTRY                "DriveTypePropertiesA.rgs"
+  IDR_STRINGPROPERTIES            REGISTRY                "StringPropertiesA.rgs"
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 338, 230
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "About ComboListBoxControls..."
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,281,206,50,14
+    CONTROL         5,IDC_ABOUT,"Static",SS_BITMAP | SS_REALSIZEIMAGE,10,10,132,169,WS_EX_TRANSPARENT
+    LTEXT           "ComboListBoxControls",IDC_NAME,124,10,207,11,0,WS_EX_TRANSPARENT
+    LTEXT           "<Version>",IDC_VERSION,124,21,207,26,0,WS_EX_TRANSPARENT
+    CONTROL         "Written by:",IDC_AUTHOR,"Static",WS_GROUP | 0x20,124,51,207,11
+    LTEXT           "<Authors>",IDC_AUTHORS,124,62,207,13,0,WS_EX_TRANSPARENT
+    LTEXT           "Thanks go to:",IDC_THANKS,124,82,207,11,0,WS_EX_TRANSPARENT
+    LTEXT           "<Thanks>",IDC_THANKSTO,124,93,207,33,0,WS_EX_TRANSPARENT
+    LTEXT           "Special Thanks go to:",IDC_SPECIALTHANKS,124,133,207,11,0,WS_EX_TRANSPARENT
+    CONTROL         "<SpecialThanks>",IDC_SPECIALTHANKSTO,"Static",WS_GROUP | 0x20,124,144,207,23
+    LTEXT           "Further information:",IDC_MORE,124,181,207,11,0,WS_EX_TRANSPARENT
+    LTEXT           "<Homepage>",IDC_HOMEPAGE,124,192,95,8,SS_NOTIFY,WS_EX_TRANSPARENT
+    LTEXT           "<Bugtracker>",IDC_BUGTRACKER,220,192,50,8,SS_NOTIFY,WS_EX_TRANSPARENT
+    CONTROL         6,IDC_PAYPAL,"Static",SS_BITMAP | SS_NOTIFY | SS_REALSIZEIMAGE,225,204,48,18,WS_EX_TRANSPARENT
+END
+
+IDD_COMMONPROPERTIES DIALOGEX 0, 0, 271, 136
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         "&Disabled events:",IDC_STATIC,"Static",WS_GROUP | 0x20,7,7,53,8
+    CONTROL         "",IDC_DISABLEDEVENTSBOX,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | LVS_NOCOLUMNHEADER | WS_BORDER | WS_TABSTOP,7,17,130,114
+END
+
+IDD_DRIVETYPEPROPERTIES DIALOGEX 0, 0, 271, 136
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         "Displayed drive &types:",IDC_STATIC,"Static",WS_GROUP | 0x20,7,7,75,8
+    CONTROL         "",IDC_DISPLAYEDDRIVETYPESBOX,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | LVS_NOCOLUMNHEADER | WS_BORDER | WS_TABSTOP,7,17,115,114
+    CONTROL         "Load volume &names for:",IDC_STATIC,"Static",WS_GROUP | 0x20,127,7,80,8
+    CONTROL         "",IDC_DRIVETYPESWITHVOLNAMESBOX,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | LVS_NOCOLUMNHEADER | WS_BORDER | WS_TABSTOP,127,17,115,114
+END
+
+IDD_STRINGPROPERTIES DIALOGEX 0, 0, 271, 136
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         "&Property:",IDC_STATIC,"Static",WS_GROUP | 0x20,7,7,34,8
+    COMBOBOX        IDC_PROPERTYCOMBO,42,5,77,52,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_PROPERTYEDIT,7,22,257,106,ES_MULTILINE | ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""winres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+#ifdef UNICODE
+    "1 TYPELIB ""CBLCtlsU.tlb""\r\n"
+#else
+    "1 TYPELIB ""CBLCtlsA.tlb""\r\n"
+#endif
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_LOADSETTINGS        "Load settings from a file..."
+    IDS_SAVESETTINGS        "Save the settings to a file..."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_TITLECOMMONPROPERTIES "Common"
+    IDS_DOCSTRINGCOMMONPROPERTIES "Common Properties"
+    IDS_TITLEDRIVETYPEPROPERTIES "Drive Types"
+    IDS_DOCSTRINGDRIVETYPEPROPERTIES "Drive Type Properties"
+    IDS_TITLESTRINGPROPERTIES "String"
+    IDS_DOCSTRINGSTRINGPROPERTIES "String Properties"
+    IDS_PROJNAME            "CBLCtls"
+END
+
+STRINGTABLE 
+BEGIN
+    IDPC_ACCESSIBILITY      "Accessibility"
+    IDPC_COLORS             "Colors"
+    IDPC_DRAGDROP           "Drag'n'Drop"
+END
+
+STRINGTABLE 
+BEGIN
+    IDP_APPEARANCE2D        "%i - 2D"
+    IDP_APPEARANCE3D        "%i - 3D"
+    IDP_APPEARANCE3DLIGHT   "%i - 3D Light"
+    IDP_APPEARANCEDEFAULT   "%i - Default"
+    IDP_BORDERSTYLENONE     "%i - None"
+    IDP_BORDERSTYLEFIXEDSINGLE "%i - Fixed Single"
+    IDP_CHARACTERCONVERSIONNONE "%i - None"
+END
+
+STRINGTABLE 
+BEGIN
+    IDP_CHARACTERCONVERSIONLOWERCASE "%i - Lowercase"
+    IDP_CHARACTERCONVERSIONUPPERCASE "%i - Uppercase"
+    IDP_DISPLAYNAMESTYLEDRIVELETTER     "%i - Drive Letter"
+    IDP_DISPLAYNAMESTYLEDRIVELETTERCOLON     "%i - Drive Letter with Colon"
+    IDP_DISPLAYNAMESTYLEVOLUMENAME     "%i - Volume Name"
+    IDP_DISPLAYNAMESTYLEVB6STYLE     "%i - VB6 Style"
+    IDP_DISPLAYNAMESTYLESHELLSTYLE     "%i - Shell Style"
+    IDP_DROPDOWNKEYF4     "%i - F4"
+    IDP_DROPDOWNKEYDOWNARROW "%i - Down Arrow"
+    IDP_HANDLEOLEDRAGDROPNONE "%i - None"
+    IDP_HANDLEOLEDRAGDROPSOURCEPART "%i - Source Part"
+    IDP_HANDLEOLEDRAGDROPTARGETPART "%i - Target Part"
+    IDP_HANDLEOLEDRAGDROPBOTHPARTS "%i - Both Parts"
+    IDP_ICONVISIBILITYVISIBLE "%i - Visible"
+    IDP_ICONVISIBILITYHIDDENBUTINDENT "%i - Hidden (Indent)"
+    IDP_ICONVISIBILITYHIDDENDONTINDENT "%i - Hidden (Don't Indent)"
+    IDP_IMEMODEINHERIT      "%i - Inherit"
+    IDP_IMEMODENOCONTROL    "%i - No Control"
+    IDP_IMEMODEON           "%i - On"
+    IDP_IMEMODEOFF          "%i - Off"
+    IDP_IMEMODEDISABLE      "%i - Disable"
+    IDP_IMEMODEHIRAGANA     "%i - Hiragana DBC"
+    IDP_IMEMODEKATAKANA     "%i - Katakana DBC"
+    IDP_IMEMODEKATAKANAHALF "%i - Katakana SBC"
+    IDP_IMEMODEALPHAFULL    "%i - Alphanumeric DBC"
+    IDP_IMEMODEALPHA        "%i - Alphanumeric SBC"
+    IDP_IMEMODEHANGULFULL   "%i - Hangul DBC"
+    IDP_IMEMODEHANGUL       "%i - Hangul SBC"
+    IDP_INSERTMARKSTYLENATIVE "%i - Native"
+    IDP_INSERTMARKSTYLEIMPROVED "%i - Improved"
+    IDP_MOUSEPOINTERDEFAULT "%i - Default"
+    IDP_MOUSEPOINTERARROW   "%i - Arrow"
+    IDP_MOUSEPOINTERCROSS   "%i - Cross"
+    IDP_MOUSEPOINTERIBEAM   "%i - I-Cursor"
+    IDP_MOUSEPOINTERICON    "%i - Symbol"
+    IDP_MOUSEPOINTERSIZE    "%i - Size"
+    IDP_MOUSEPOINTERSIZENESW "%i - Size NE SW"
+    IDP_MOUSEPOINTERSIZENS  "%i - Size N S"
+    IDP_MOUSEPOINTERSIZENWSE "%i - Size NW SE"
+    IDP_MOUSEPOINTERSIZEEW  "%i - Size E W"
+    IDP_MOUSEPOINTERUPARROW "%i - Up-Arrow"
+    IDP_MOUSEPOINTERHOURGLASS "%i - Hourglass"
+    IDP_MOUSEPOINTERNODROP  "%i - Can't Drop"
+    IDP_MOUSEPOINTERARROWHOURGLASS "%i - Arrow + Hourglass"
+    IDP_MOUSEPOINTERARROWQUESTION "%i - Arrow + Questionmark"
+END
+
+STRINGTABLE 
+BEGIN
+    IDP_MOUSEPOINTERSIZEALL "%i - Size All"
+    IDP_MOUSEPOINTERHAND    "%i - Hand"
+    IDP_MOUSEPOINTERINSERTMEDIA "%i - Insert Media"
+    IDP_MOUSEPOINTERSCROLLALL "%i - Scroll All"
+    IDP_MOUSEPOINTERSCROLLN "%i - Scroll N"
+    IDP_MOUSEPOINTERSCROLLNE "%i - Scroll NE"
+    IDP_MOUSEPOINTERSCROLLE "%i - Scroll E"
+    IDP_MOUSEPOINTERSCROLLSE "%i - Scroll SE"
+    IDP_MOUSEPOINTERSCROLLS "%i - Scroll S"
+    IDP_MOUSEPOINTERSCROLLSW "%i - Scroll SW"
+    IDP_MOUSEPOINTERSCROLLW "%i - Scroll W"
+    IDP_MOUSEPOINTERSCROLLNW "%i - Scroll NW"
+    IDP_MOUSEPOINTERSCROLLNS "%i - Scroll N S"
+    IDP_MOUSEPOINTERSCROLLEW "%i - Scroll E W"
+    IDP_MOUSEPOINTERCUSTOM  "%i - Custom"
+    IDP_MULTISELECTNONE     "%i - None"
+    IDP_MULTISELECTNORMAL   "%i - Normal"
+    IDP_MULTISELECTSELECTBYCLICK "%i - Select By Click"
+    IDP_OLEDRAGIMAGESTYLECLASSIC "%i - Classic (Always)"
+    IDP_OLEDRAGIMAGESTYLEAERO "%i - Aero (If Available)"
+    IDP_OWNERDRAWITEMSDONTOWNERDRAW "%i - No Owner Draw"
+    IDP_OWNERDRAWITEMSFIXEDHEIGHT   "%i - Fixed Height"
+    IDP_OWNERDRAWITEMSVARIABLEHEIGHT "%i - Variable Height"
+    IDP_RIGHTTOLEFTNONE     "%i - None"
+    IDP_RIGHTTOLEFTTEXT     "%i - Text"
+    IDP_RIGHTTOLEFTLAYOUT   "%i - Layout"
+    IDP_RIGHTTOLEFTTEXTLAYOUT "%i - Text + Layout"
+    IDP_STYLECOMBODROPDOWNLIST "%i - Edit Field + Drop-Down List"
+    IDP_STYLEDROPDOWNLIST   "%i - Drop-Down List Only"
+    IDP_STYLECOMBOFIELD     "%i - Edit Field Only"
+    IDP_TOOLTIPSNONE        "%i - None"
+    IDP_TOOLTIPSLABELTIPS   "%i - Label Tips"
+    IDP_TOOLTIPSINFOTIPS    "%i - Info Tips"
+    IDP_TOOLTIPSLABELANDINFOTIPS "%i - Label + Info Tips"
+    IDP_USESYSTEMIMAGELISTNONE        "%i - Custom Image List"
+    IDP_USESYSTEMIMAGELISTSMALL   "%i - Small"
+    IDP_USESYSTEMIMAGELISTLARGE    "%i - Large"
+    IDP_USESYSTEMIMAGELISTEXTRALARGE "%i - Extra Large"
+    IDP_USESYSTEMIMAGELISTJUMBO "%i - Jumbo"
+END
+
+STRINGTABLE 
+BEGIN
+    IDES_FORMATMISMATCH     "Specified format doesn't match format of data"
+    IDES_INVALIDOBJUSE      "Invalid object use"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#ifdef _UNICODE
+  1 TYPELIB "CBLCtlsU.tlb"
+#else
+  1 TYPELIB "CBLCtlsA.tlb"
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

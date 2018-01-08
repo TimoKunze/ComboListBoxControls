@@ -1,0 +1,518 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Generated Files">
+      <UniqueIdentifier>{767d3c4b-fba0-4cfa-91d7-588a51d69aaa}</UniqueIdentifier>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Generated Files">
+      <UniqueIdentifier>{c301e5dc-5aba-4df4-9753-a969bfa56144}</UniqueIdentifier>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="Documents">
+      <UniqueIdentifier>{037ce804-8e59-4a69-b814-c7f9e659b1fd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AboutDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="APIWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CBLCtls.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ComboBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ComboBoxItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ComboBoxItems.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CommonProperties.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CWindowEx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DriveComboBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DriveComboBoxItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DriveComboBoxItemContainer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DriveComboBoxItems.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DriveTypeProperties.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EnumOLEVERB.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="helpers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageComboBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageComboBoxItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageComboBoxItemContainer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageComboBoxItems.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListBoxItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListBoxItemContainer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListBoxItems.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceOLEDataObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StringProperties.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TargetOLEDataObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VirtualComboBoxItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VirtualDriveComboBoxItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VirtualImageComboBoxItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VirtualListBoxItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CBLCtlsA_i.c">
+      <Filter>Source Files\Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CBLCtlsU_i.c">
+      <Filter>Source Files\Generated Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CBLCtlsA.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="CBLCtlsU.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="res\About.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\CBLCtlsA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\CBLCtlsU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ComboBoxA.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ComboBoxU.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\DriveComboBoxA.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\DriveComboBoxU.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ImageComboBoxA.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ImageComboBoxU.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListBoxA.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListBoxU.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Paypal.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ToolBar disabled.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ToolBar enabled.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\doc\Unused parts of API.txt">
+      <Filter>Documents</Filter>
+    </None>
+    <None Include="res\ComboBoxA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\VirtualListBoxItemU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ComboBoxItemA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ComboBoxItemsA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ComboBoxItemsU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ComboBoxItemU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ComboBoxU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\CommonPropertiesA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\CommonPropertiesU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\DriveComboBoxA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\DriveComboBoxItemA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\DriveComboBoxItemContainerA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\DriveComboBoxItemContainerU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\DriveComboBoxItemsA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\DriveComboBoxItemsU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\DriveComboBoxItemU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\DriveComboBoxU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\DriveTypePropertiesA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\DriveTypePropertiesU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ImageComboBoxA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ImageComboBoxItemA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ImageComboBoxItemContainerA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ImageComboBoxItemContainerU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ImageComboBoxItemsA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ImageComboBoxItemsU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ImageComboBoxItemU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ImageComboBoxU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListBoxA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListBoxItemA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListBoxItemContainerA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListBoxItemContainerU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListBoxItemsA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListBoxItemsU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListBoxItemU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ListBoxU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\OLEDataObjectA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\OLEDataObjectU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\StringPropertiesA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\StringPropertiesU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\VirtualComboBoxItemA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\VirtualComboBoxItemU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\VirtualDriveComboBoxItemA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\VirtualDriveComboBoxItemU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\VirtualImageComboBoxItemA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\VirtualImageComboBoxItemU.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\VirtualListBoxItemA.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="CBLCtlsU.idl">
+      <Filter>Source Files</Filter>
+    </Midl>
+    <Midl Include="CBLCtlsA.idl">
+      <Filter>Source Files</Filter>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="_IComboBoxEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IComboBoxItemEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IComboBoxItemsEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IDriveComboBoxEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IDriveComboBoxItemContainerEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IDriveComboBoxItemEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IDriveComboBoxItemsEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IImageComboBoxEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IImageComboBoxItemContainerEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IImageComboBoxItemEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IImageComboBoxItemsEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IListBoxEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IListBoxItemContainerEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IListBoxItemEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IListBoxItemsEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IOLEDataObjectEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IVirtualComboBoxItemEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IVirtualDriveComboBoxItemEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IVirtualImageComboBoxItemEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_IVirtualListBoxItemEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AboutDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="APIWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClassFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ComboBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ComboBoxItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ComboBoxItems.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonProperties.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CompilerFlags.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CWindowEx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DispIDs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DriveComboBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DriveComboBoxItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DriveComboBoxItemContainer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DriveComboBoxItems.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DriveTypeProperties.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EnumOLEVERB.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="helpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HyperLinkEx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ICategorizeProperties.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ICreditsProvider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageComboBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageComboBoxItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageComboBoxItemContainer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageComboBoxItems.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IMouseHookHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListBoxItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListBoxItemContainer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListBoxItems.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PropertyNotifySinkImpl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceOLEDataObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StringProperties.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TargetOLEDataObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VirtualComboBoxItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VirtualDriveComboBoxItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VirtualImageComboBoxItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VirtualListBoxItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CBLCtlsA.h">
+      <Filter>Header Files\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CBLCtlsU.h">
+      <Filter>Header Files\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="res\resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="res\CBLCtls.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
