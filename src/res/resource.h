@@ -10,10 +10,10 @@
 #define VERSION_MINOR																5
 #define VERSION_REVISION1														3
 #define VERSION_REVISION2														0
-#define VERSION_BUILD																193
-#define STRFILEVERSION															"1.5.3.193"
+#define VERSION_BUILD																194
+#define STRFILEVERSION															"1.5.3.194"
 #define STRPRODUCTVERSION														"1.5"
-#define STRTIMESTAMP																"2018/01/08 22:42:20"
+#define STRTIMESTAMP																"2018/01/08 23:18:25"
 
 #define IDB_COMBOBOX																1
 #define IDB_DRIVECOMBOBOX														2
