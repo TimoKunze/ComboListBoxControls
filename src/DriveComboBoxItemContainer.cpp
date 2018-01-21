@@ -452,7 +452,7 @@ STDMETHODIMP DriveComboBoxItemContainer::CreateDragImage(OLE_XPOS_PIXELS* pXUppe
 				CAtlArray<RECT> itemBoundingRects;
 			#endif
 			POINT upperLeftPoint = {0};
-			WTL::CRect boundingRect;
+			CRect boundingRect;
 			#ifdef USE_STL
 				for(std::vector<LONG>::iterator iter = properties.items.begin(); iter != properties.items.end(); ++iter) {
 					int itemIndex = properties.pOwnerDCBox->IDToItemIndex(*iter);
@@ -488,7 +488,7 @@ STDMETHODIMP DriveComboBoxItemContainer::CreateDragImage(OLE_XPOS_PIXELS* pXUppe
 					#endif
 				}
 			}
-			WTL::CRect dragImageRect(0, 0, boundingRect.Width(), boundingRect.Height());
+			CRect dragImageRect(0, 0, boundingRect.Width(), boundingRect.Height());
 
 			// setup the DCs we'll draw into
 			HDC hCompatibleDC = GetDC(HWND_DESKTOP);

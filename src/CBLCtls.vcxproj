@@ -507,7 +507,7 @@
     <ClCompile Include="ComboBoxItem.cpp" />
     <ClCompile Include="ComboBoxItems.cpp" />
     <ClCompile Include="CommonProperties.cpp" />
-    <ClCompile Include="CWindowEx.cpp" />
+    <ClCompile Include="CWindowEx2.cpp" />
     <ClCompile Include="DriveComboBox.cpp" />
     <ClCompile Include="DriveComboBoxItem.cpp" />
     <ClCompile Include="DriveComboBoxItemContainer.cpp" />
@@ -665,7 +665,7 @@
     <ClInclude Include="ComboBoxItems.h" />
     <ClInclude Include="CommonProperties.h" />
     <ClInclude Include="CompilerFlags.h" />
-    <ClInclude Include="CWindowEx.h" />
+    <ClInclude Include="CWindowEx2.h" />
     <ClInclude Include="DispIDs.h" />
     <ClInclude Include="DriveComboBox.h" />
     <ClInclude Include="DriveComboBoxItem.h" />

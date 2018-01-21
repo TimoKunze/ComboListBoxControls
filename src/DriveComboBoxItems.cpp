@@ -611,7 +611,7 @@ void DriveComboBoxItems::OptimizeFilter(FilteredPropertyConstants filteredProper
 {
 	ATLASSERT(IsWindow(hWndDCBox));
 
-	CWindowEx(hWndDCBox).InternalSetRedraw(FALSE);
+	CWindowEx2(hWndDCBox).InternalSetRedraw(FALSE);
 	// sort in reverse order
 	#ifdef USE_STL
 		itemsToRemove.sort(std::greater<int>());
@@ -632,7 +632,7 @@ void DriveComboBoxItems::OptimizeFilter(FilteredPropertyConstants filteredProper
 			SendMessage(hWndDCBox, CBEM_DELETEITEM, itemsToRemove.GetAt(itemsToRemove.FindIndex(i)), 0);
 		}
 	#endif
-	CWindowEx(hWndDCBox).InternalSetRedraw(TRUE);
+	CWindowEx2(hWndDCBox).InternalSetRedraw(TRUE);
 
 	return S_OK;
 }

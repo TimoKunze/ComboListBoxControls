@@ -3,7 +3,7 @@
 #include "stdafx.h"
 #include "ComboBoxItem.h"
 #include "ClassFactory.h"
-#include "CWindowEx.h"
+#include "CWindowEx2.h"
 
 
 //////////////////////////////////////////////////////////////////////
@@ -282,7 +282,7 @@ STDMETHODIMP ComboBoxItem::put_Text(BSTR newValue)
 
 	HWND hWndCBox = properties.GetCBoxHWnd();
 	ATLASSERT(IsWindow(hWndCBox));
-	CWindowEx wnd = hWndCBox;
+	CWindowEx2 wnd = hWndCBox;
 	BOOL expectsString;
 	DWORD style = wnd.GetStyle();
 	if(style & (CBS_OWNERDRAWFIXED | CBS_OWNERDRAWVARIABLE)) {

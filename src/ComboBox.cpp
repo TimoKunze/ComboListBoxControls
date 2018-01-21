@@ -2906,7 +2906,7 @@ STDMETHODIMP ComboBox::get_ListHeight(OLE_YSIZE_PIXELS* pValue)
 	}
 
 	if(!IsInDesignMode() && containedListBox.IsWindow()) {
-		WTL::CRect rc;
+		CRect rc;
 		containedListBox.GetWindowRect(&rc);
 		properties.listHeight = rc.Height();
 	}
@@ -2928,7 +2928,7 @@ STDMETHODIMP ComboBox::put_ListHeight(OLE_YSIZE_PIXELS newValue)
 		SetDirty(TRUE);
 
 		if(IsWindow()) {
-			WTL::CRect rc;
+			CRect rc;
 			GetWindowRect(&rc);
 			if(properties.listHeight == -1) {
 				// make room for 8 items
@@ -2976,7 +2976,7 @@ STDMETHODIMP ComboBox::put_ListInsertMarkColor(OLE_COLOR newValue)
 			listInsertMark.color = OLECOLOR2COLORREF(properties.listInsertMarkColor);
 			if(!listInsertMark.hidden) {
 				RECT itemBoundingRectangle = {0};
-				WTL::CRect insertMarkRect;
+				CRect insertMarkRect;
 				if(listInsertMark.itemIndex != -1) {
 					containedListBox.SendMessage(LB_GETITEMRECT, listInsertMark.itemIndex, reinterpret_cast<LPARAM>(&itemBoundingRectangle));
 					if(listInsertMark.afterItem) {
@@ -3888,7 +3888,7 @@ STDMETHODIMP ComboBox::GetClosestListInsertMarkPosition(OLE_XPOS_PIXELS x, OLE_Y
 	containedListBox.GetClientRect(&clientRectangle);
 	BOOL abort = FALSE;
 	for(int itemIndex = max(firstVisibleItem - 1, 0); itemIndex < numberOfItems; ++itemIndex) {
-		WTL::CRect itemBoundingRectangle;
+		CRect itemBoundingRectangle;
 		containedListBox.SendMessage(LB_GETITEMRECT, itemIndex, reinterpret_cast<LPARAM>(&itemBoundingRectangle));
 		if(pt.x >= itemBoundingRectangle.left && pt.x <= itemBoundingRectangle.right) {
 			if(itemIndex == firstVisibleItem && pt.y < itemBoundingRectangle.top) {
@@ -4071,7 +4071,7 @@ STDMETHODIMP ComboBox::HitTest(OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y, HitTestCons
 
 	if(IsWindow()) {
 		POINT pt = {x, y};
-		WTL::CRect rc;
+		CRect rc;
 		GetWindowRect(&rc);
 		ScreenToClient(&rc);
 		if(rc.PtInRect(pt)) {
@@ -4334,7 +4334,7 @@ STDMETHODIMP ComboBox::SetListInsertMarkPosition(InsertMarkPositionConstants rel
 		}
 
 		RECT itemBoundingRectangle = {0};
-		WTL::CRect oldInsertMarkRect;
+		CRect oldInsertMarkRect;
 		if(oldItemIndex != -1) {
 			containedListBox.SendMessage(LB_GETITEMRECT, oldItemIndex, reinterpret_cast<LPARAM>(&itemBoundingRectangle));
 			if(oldAfterItem) {
@@ -4348,7 +4348,7 @@ STDMETHODIMP ComboBox::SetListInsertMarkPosition(InsertMarkPositionConstants rel
 			oldInsertMarkRect.right = itemBoundingRectangle.right;
 		}
 
-		WTL::CRect newInsertMarkRect;
+		CRect newInsertMarkRect;
 		if(listInsertMark.itemIndex != -1) {
 			containedListBox.SendMessage(LB_GETITEMRECT, listInsertMark.itemIndex, reinterpret_cast<LPARAM>(&itemBoundingRectangle));
 			if(listInsertMark.afterItem) {
@@ -4890,7 +4890,7 @@ LRESULT ComboBox::OnSetCursor(LONG index, UINT /*message*/, WPARAM /*wParam*/, L
 	BOOL setCursor = FALSE;
 
 	// Are we really over the control?
-	WTL::CRect clientArea;
+	CRect clientArea;
 	switch(index) {
 		case 0:
 			GetClientRect(&clientArea);
@@ -5134,7 +5134,7 @@ LRESULT ComboBox::OnWindowPosChanged(UINT message, WPARAM wParam, LPARAM lParam,
 {
 	LPWINDOWPOS pDetails = reinterpret_cast<LPWINDOWPOS>(lParam);
 
-	WTL::CRect windowRectangle = m_rcPos;
+	CRect windowRectangle = m_rcPos;
 	/* Ugly hack: We depend on this message being sent without SWP_NOMOVE at least once, but this requirement
 	              not always will be fulfilled. Fortunately pDetails seems to contain correct x and y values
 	              even if SWP_NOMOVE is set.
@@ -5163,7 +5163,7 @@ LRESULT ComboBox::OnWindowPosChanged(UINT message, WPARAM wParam, LPARAM lParam,
 
 	if(!(pDetails->flags & SWP_NOMOVE) || !(pDetails->flags & SWP_NOSIZE)) {
 		if(!(pDetails->flags & SWP_NOSIZE) && !RunTimeHelper::IsCommCtrl6() && containedListBox.IsWindow()) {
-			WTL::CRect dropDownRectangle;
+			CRect dropDownRectangle;
 			containedListBox.GetWindowRect(&dropDownRectangle);
 			flags.lastListBoxHeight = dropDownRectangle.Height();
 		}
@@ -5944,7 +5944,7 @@ LRESULT ComboBox::OnListBoxScroll(UINT message, WPARAM wParam, LPARAM lParam, BO
 	if(!listInsertMark.hidden) {
 		listInsertMark.hidden = TRUE;
 		// remove the insertion mark - we might get drawing glitches otherwise
-		WTL::CRect oldInsertMarkRect;
+		CRect oldInsertMarkRect;
 		// calculate the current insertion mark's rectangle
 		RECT itemBoundingRectangle = {0};
 		containedListBox.SendMessage(LB_GETITEMRECT, listInsertMark.itemIndex, reinterpret_cast<LPARAM>(&itemBoundingRectangle));
@@ -6194,9 +6194,9 @@ inline HRESULT ComboBox::Raise_ContextMenu(SHORT button, SHORT shift, OLE_XPOS_P
 			// the event was caused by the keyboard
 			if(properties.processContextMenuKeys) {
 				// propose the middle of the control's client rectangle as the menu's position
-				WTL::CRect clientRectangle;
+				CRect clientRectangle;
 				GetClientRect(&clientRectangle);
-				WTL::CPoint centerPoint = clientRectangle.CenterPoint();
+				CPoint centerPoint = clientRectangle.CenterPoint();
 				x = centerPoint.x;
 				y = centerPoint.y;
 			} else {
@@ -6374,12 +6374,12 @@ inline HRESULT ComboBox::Raise_ListDropDown(void)
 {
 	if(!RunTimeHelper::IsCommCtrl6()) {
 		if(properties.listHeight == -1 && flags.lastListBoxHeight >= 3) {
-			WTL::CRect dropDownRectangle;
+			CRect dropDownRectangle;
 			containedListBox.GetWindowRect(&dropDownRectangle);
 			dropDownRectangle.bottom = dropDownRectangle.top + flags.lastListBoxHeight;
 			containedListBox.MoveWindow(&dropDownRectangle);
 		} else if(properties.listHeight != -1) {
-			WTL::CRect dropDownRectangle;
+			CRect dropDownRectangle;
 			containedListBox.GetWindowRect(&dropDownRectangle);
 			dropDownRectangle.bottom = dropDownRectangle.top + properties.listHeight;
 			containedListBox.MoveWindow(&dropDownRectangle);
@@ -6578,8 +6578,8 @@ inline HRESULT ComboBox::Raise_ListOLEDragEnter(IDataObject* pData, LPDWORD pEff
 	if(properties.listDragScrollTimeBase != 0) {
 		/* Use a 16 pixels wide border around the client area as the zone for auto-scrolling.
 		   Are we within this zone? */
-		WTL::CPoint mousePos(mousePosition.x, mousePosition.y);
-		WTL::CRect noScrollZone;
+		CPoint mousePos(mousePosition.x, mousePosition.y);
+		CRect noScrollZone;
 		containedListBox.GetClientRect(&noScrollZone);
 		BOOL isInScrollZone = (noScrollZone.PtInRect(mousePos) == TRUE);
 		if(isInScrollZone) {
@@ -6733,8 +6733,8 @@ inline HRESULT ComboBox::Raise_ListOLEDragMouseMove(LPDWORD pEffect, DWORD keySt
 	if(properties.listDragScrollTimeBase != 0) {
 		/* Use a 16 pixels wide border around the client area as the zone for auto-scrolling.
 		   Are we within this zone? */
-		WTL::CPoint mousePos(mousePosition.x, mousePosition.y);
-		WTL::CRect noScrollZone;
+		CPoint mousePos(mousePosition.x, mousePosition.y);
+		CRect noScrollZone;
 		containedListBox.GetClientRect(&noScrollZone);
 		BOOL isInScrollZone = (noScrollZone.PtInRect(mousePos) == TRUE);
 		if(isInScrollZone) {
@@ -7787,7 +7787,7 @@ void ComboBox::SendConfigurationMessages(void)
 
 	ApplyFont();
 
-	WTL::CRect rc;
+	CRect rc;
 	GetWindowRect(&rc);
 	if(properties.listHeight == -1) {
 		// make room for 8 items
@@ -7957,7 +7957,7 @@ int ComboBox::ListBoxHitTest(LONG x, LONG y, HitTestConstants* pFlags, BOOL auto
 
 	POINT pt = {x, y};
 	containedListBox.ClientToScreen(&pt);
-	WTL::CRect rc;
+	CRect rc;
 	containedListBox.GetWindowRect(&rc);
 	if(rc.PtInRect(pt)) {
 		*pFlags = htNotOverItem;

@@ -25,7 +25,7 @@
 #endif
 #include "_IComboBoxItemsEvents_CP.h"
 #include "helpers.h"
-#include "CWindowEx.h"
+#include "CWindowEx2.h"
 #include "ComboBox.h"
 #include "ComboBoxItem.h"
 

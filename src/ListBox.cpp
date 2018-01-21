@@ -946,10 +946,10 @@ HIMAGELIST ListBox::CreateLegacyDragImage(int itemIndex, LPPOINT pUpperLeftPoint
 	}
 
 	// calculate the bounding rectangles of the various item parts
-	WTL::CRect itemBoundingRect;
-	WTL::CRect selectionBoundingRect;
-	WTL::CRect focusRect;
-	WTL::CRect labelBoundingRect;
+	CRect itemBoundingRect;
+	CRect selectionBoundingRect;
+	CRect focusRect;
+	CRect labelBoundingRect;
 
 	SendMessage(LB_GETITEMRECT, itemIndex, reinterpret_cast<LPARAM>(&selectionBoundingRect));
 	labelBoundingRect = selectionBoundingRect;
@@ -1045,7 +1045,7 @@ HIMAGELIST ListBox::CreateLegacyDragImage(int itemIndex, LPPOINT pUpperLeftPoint
 
 	if(itemTextLength > 0) {
 		// draw the text
-		WTL::CRect rc = labelBoundingRect;
+		CRect rc = labelBoundingRect;
 		if(layoutRTL) {
 			// TODO: Don't use hard-coded margins
 			rc.OffsetRect(1, 0);
@@ -1256,7 +1256,7 @@ BOOL ListBox::CreateLegacyOLEDragImage(IListBoxItemContainer* pItems, LPSHDRAGIM
 			pDragImage->crColorKey = RGB(0xF4, 0x00, 0x00);
 			CBrush backroundBrush;
 			backroundBrush.CreateSolidBrush(pDragImage->crColorKey);
-			memoryDC.FillRect(WTL::CRect(0, 0, bitmapWidth, bitmapHeight), backroundBrush);
+			memoryDC.FillRect(CRect(0, 0, bitmapWidth, bitmapHeight), backroundBrush);
 			ImageList_Draw(hImageList, 0, memoryDC, 0, 0, ILD_NORMAL);
 
 			// clean up
@@ -3208,7 +3208,7 @@ STDMETHODIMP ListBox::put_InsertMarkColor(OLE_COLOR newValue)
 					case imsImproved:
 					{
 						RECT itemBoundingRectangle = {0};
-						WTL::CRect insertMarkRect;
+						CRect insertMarkRect;
 						if(insertMark.itemIndex != -1) {
 							SendMessage(LB_GETITEMRECT, insertMark.itemIndex, reinterpret_cast<LPARAM>(&itemBoundingRectangle));
 							if(insertMark.afterItem) {
@@ -4757,7 +4757,7 @@ STDMETHODIMP ListBox::GetClosestInsertMarkPosition(OLE_XPOS_PIXELS x, OLE_YPOS_P
 	GetClientRect(&clientRectangle);
 	BOOL abort = FALSE;
 	for(int itemIndex = max(firstVisibleItem - 1, 0); itemIndex < numberOfItems; ++itemIndex) {
-		WTL::CRect itemBoundingRectangle;
+		CRect itemBoundingRectangle;
 		SendMessage(LB_GETITEMRECT, itemIndex, reinterpret_cast<LPARAM>(&itemBoundingRectangle));
 		if(pt.x >= itemBoundingRectangle.left && pt.x <= itemBoundingRectangle.right) {
 			if(itemIndex == firstVisibleItem && pt.y < itemBoundingRectangle.top) {
@@ -5303,7 +5303,7 @@ STDMETHODIMP ListBox::SetInsertMarkPosition(InsertMarkPositionConstants relative
 			case imsImproved:
 			{
 				RECT itemBoundingRectangle = {0};
-				WTL::CRect oldInsertMarkRect;
+				CRect oldInsertMarkRect;
 				if(oldItemIndex != -1) {
 					SendMessage(LB_GETITEMRECT, oldItemIndex, reinterpret_cast<LPARAM>(&itemBoundingRectangle));
 					if(oldAfterItem) {
@@ -5317,7 +5317,7 @@ STDMETHODIMP ListBox::SetInsertMarkPosition(InsertMarkPositionConstants relative
 					oldInsertMarkRect.right = itemBoundingRectangle.right;
 				}
 
-				WTL::CRect newInsertMarkRect;
+				CRect newInsertMarkRect;
 				if(insertMark.itemIndex != -1) {
 					SendMessage(LB_GETITEMRECT, insertMark.itemIndex, reinterpret_cast<LPARAM>(&itemBoundingRectangle));
 					if(insertMark.afterItem) {
@@ -5689,9 +5689,9 @@ LRESULT ListBox::OnMouseMove(UINT message, WPARAM wParam, LPARAM lParam, BOOL& w
 			if(clickRectHeight < 4) {
 				clickRectHeight = 4;
 			}
-			WTL::CRect rc(dragDropStatus.candidate.position.x - clickRectWidth, dragDropStatus.candidate.position.y - clickRectHeight, dragDropStatus.candidate.position.x + clickRectWidth, dragDropStatus.candidate.position.y + clickRectHeight);
+			CRect rc(dragDropStatus.candidate.position.x - clickRectWidth, dragDropStatus.candidate.position.y - clickRectHeight, dragDropStatus.candidate.position.x + clickRectWidth, dragDropStatus.candidate.position.y + clickRectHeight);
 
-			if(!rc.PtInRect(WTL::CPoint(GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam)))) {
+			if(!rc.PtInRect(CPoint(GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam)))) {
 				mouseStatus.mouseDownMessageToSendOnMouseUp.hwnd = NULL;
 				SHORT button = 0;
 				SHORT shift = 0;
@@ -5857,7 +5857,7 @@ LRESULT ListBox::OnScroll(UINT message, WPARAM wParam, LPARAM lParam, BOOL& /*wa
 			case imsImproved:
 			{
 				// remove the insertion mark - we might get drawing glitches otherwise
-				WTL::CRect oldInsertMarkRect;
+				CRect oldInsertMarkRect;
 				// calculate the current insertion mark's rectangle
 				RECT itemBoundingRectangle = {0};
 				SendMessage(LB_GETITEMRECT, insertMark.itemIndex, reinterpret_cast<LPARAM>(&itemBoundingRectangle));
@@ -5910,7 +5910,7 @@ LRESULT ListBox::OnSetCursor(UINT /*message*/, WPARAM /*wParam*/, LPARAM /*lPara
 	BOOL setCursor = FALSE;
 
 	// Are we really over the control?
-	WTL::CRect clientArea;
+	CRect clientArea;
 	GetClientRect(&clientArea);
 	ClientToScreen(&clientArea);
 	DWORD position = GetMessagePos();
@@ -6142,7 +6142,7 @@ LRESULT ListBox::OnWindowPosChanged(UINT /*message*/, WPARAM /*wParam*/, LPARAM 
 {
 	LPWINDOWPOS pDetails = reinterpret_cast<LPWINDOWPOS>(lParam);
 
-	WTL::CRect windowRectangle = m_rcPos;
+	CRect windowRectangle = m_rcPos;
 	/* Ugly hack: We depend on this message being sent without SWP_NOMOVE at least once, but this requirement
 	              not always will be fulfilled. Fortunately pDetails seems to contain correct x and y values
 	              even if SWP_NOMOVE is set.
@@ -7211,18 +7211,18 @@ inline HRESULT ListBox::Raise_ContextMenu(SHORT button, SHORT shift, OLE_XPOS_PI
 			dontUsePosition = TRUE;
 			if(properties.processContextMenuKeys) {
 				// retrieve the caret item and propose its rectangle's middle as the menu's position
-				WTL::CRect clientRectangle;
+				CRect clientRectangle;
 				GetClientRect(&clientRectangle);
-				WTL::CPoint centerPoint = clientRectangle.CenterPoint();
+				CPoint centerPoint = clientRectangle.CenterPoint();
 				x = centerPoint.x;
 				y = centerPoint.y;
 				hitTestDetails = htNotOverItem;
 
 				itemIndex = static_cast<LONG>(SendMessage(LB_GETCARETINDEX, 0, 0));
 				if(itemIndex >= 0) {
-					WTL::CRect itemRectangle;
+					CRect itemRectangle;
 					if(SendMessage(LB_GETITEMRECT, itemIndex, reinterpret_cast<LPARAM>(&itemRectangle)) != LB_ERR) {
-						WTL::CPoint centerPoint = itemRectangle.CenterPoint();
+						CPoint centerPoint = itemRectangle.CenterPoint();
 						x = centerPoint.x;
 						y = centerPoint.y;
 						dontUsePosition = FALSE;
@@ -7309,8 +7309,8 @@ inline HRESULT ListBox::Raise_DragMouseMove(SHORT button, SHORT shift, OLE_XPOS_
 	if(properties.dragScrollTimeBase != 0) {
 		/* Use a 16 pixels wide border around the client area as the zone for auto-scrolling.
 		   Are we within this zone? */
-		WTL::CPoint mousePosition(x, y);
-		WTL::CRect noScrollZone(0, 0, 0, 0);
+		CPoint mousePosition(x, y);
+		CRect noScrollZone(0, 0, 0, 0);
 		GetClientRect(&noScrollZone);
 		BOOL isInScrollZone = noScrollZone.PtInRect(mousePosition);
 		if(isInScrollZone) {
@@ -7845,8 +7845,8 @@ inline HRESULT ListBox::Raise_OLEDragEnter(IDataObject* pData, LPDWORD pEffect, 
 	if(properties.dragScrollTimeBase != 0) {
 		/* Use a 16 pixels wide border around the client area as the zone for auto-scrolling.
 		   Are we within this zone? */
-		WTL::CPoint mousePos(mousePosition.x, mousePosition.y);
-		WTL::CRect noScrollZone;
+		CPoint mousePos(mousePosition.x, mousePosition.y);
+		CRect noScrollZone;
 		GetClientRect(&noScrollZone);
 		BOOL isInScrollZone = (noScrollZone.PtInRect(mousePos) == TRUE);
 		if(isInScrollZone) {
@@ -8008,8 +8008,8 @@ inline HRESULT ListBox::Raise_OLEDragMouseMove(LPDWORD pEffect, DWORD keyState, 
 	if(properties.dragScrollTimeBase != 0) {
 		/* Use a 16 pixels wide border around the client area as the zone for auto-scrolling.
 		   Are we within this zone? */
-		WTL::CPoint mousePos(mousePosition.x, mousePosition.y);
-		WTL::CRect noScrollZone;
+		CPoint mousePos(mousePosition.x, mousePosition.y);
+		CRect noScrollZone;
 		GetClientRect(&noScrollZone);
 		BOOL isInScrollZone = (noScrollZone.PtInRect(mousePos) == TRUE);
 		if(isInScrollZone) {
@@ -8785,7 +8785,7 @@ int ListBox::HitTest(LONG x, LONG y, HitTestConstants* pFlags, BOOL autoScroll/*
 
 	POINT pt = {x, y};
 	ClientToScreen(&pt);
-	WTL::CRect rc;
+	CRect rc;
 	GetWindowRect(&rc);
 	if(rc.PtInRect(pt)) {
 		*pFlags = htNotOverItem;
@@ -8842,7 +8842,7 @@ BOOL ListBox::IsItemTruncated(int itemIndex, LPTSTR pLabel, int bufferSize)
 	memoryDC.CreateCompatibleDC(hCompatibleDC);
 	HFONT hPreviousFont = memoryDC.SelectFont(GetFont());
 
-	WTL::CRect textRectangle;
+	CRect textRectangle;
 	if(flags.usingThemes) {
 		CTheme themingEngine;
 		themingEngine.OpenThemeData(NULL, VSCLASS_LISTBOX);
@@ -8875,7 +8875,7 @@ BOOL ListBox::IsItemTruncated(int itemIndex, LPTSTR pLabel, int bufferSize)
 	GetScrollInfo(SB_HORZ, &scrollInfo);
 	textRectangle.OffsetRect(-scrollInfo.nPos, 0);
 
-	WTL::CRect clientRectangle;
+	CRect clientRectangle;
 	GetClientRect(&clientRectangle);
 	MapWindowPoints(HWND_DESKTOP, &clientRectangle);
 	MapWindowPoints(HWND_DESKTOP, &textRectangle);

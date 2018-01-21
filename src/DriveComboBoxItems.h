@@ -25,7 +25,7 @@
 #endif
 #include "_IDriveComboBoxItemsEvents_CP.h"
 #include "helpers.h"
-#include "CWindowEx.h"
+#include "CWindowEx2.h"
 #include "DriveComboBox.h"
 #include "DriveComboBoxItem.h"
 

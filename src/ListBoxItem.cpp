@@ -3,7 +3,7 @@
 #include "stdafx.h"
 #include "ListBoxItem.h"
 #include "ClassFactory.h"
-#include "CWindowEx.h"
+#include "CWindowEx2.h"
 
 
 //////////////////////////////////////////////////////////////////////
@@ -263,7 +263,7 @@ STDMETHODIMP ListBoxItem::put_Selected(VARIANT_BOOL newValue)
 	HWND hWndLBox = properties.GetLBoxHWnd();
 	ATLASSERT(IsWindow(hWndLBox));
 
-	CWindowEx wnd = hWndLBox;
+	CWindowEx2 wnd = hWndLBox;
 	if(!(wnd.GetStyle() & (LBS_MULTIPLESEL | LBS_EXTENDEDSEL))) {
 		return E_FAIL;
 	}
@@ -321,7 +321,7 @@ STDMETHODIMP ListBoxItem::put_Text(BSTR newValue)
 
 	HWND hWndLBox = properties.GetLBoxHWnd();
 	ATLASSERT(IsWindow(hWndLBox));
-	CWindowEx wnd = hWndLBox;
+	CWindowEx2 wnd = hWndLBox;
 	BOOL expectsString;
 	DWORD style = wnd.GetStyle();
 	if(style & (LBS_OWNERDRAWFIXED | LBS_OWNERDRAWVARIABLE)) {

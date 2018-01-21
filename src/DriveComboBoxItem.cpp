@@ -3,7 +3,7 @@
 #include "stdafx.h"
 #include "DriveComboBoxItem.h"
 #include "ClassFactory.h"
-#include "CWindowEx.h"
+#include "CWindowEx2.h"
 
 
 //////////////////////////////////////////////////////////////////////

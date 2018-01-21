@@ -577,7 +577,7 @@ void ImageComboBoxItems::OptimizeFilter(FilteredPropertyConstants filteredProper
 {
 	ATLASSERT(IsWindow(hWndICBox));
 
-	CWindowEx(hWndICBox).InternalSetRedraw(FALSE);
+	CWindowEx2(hWndICBox).InternalSetRedraw(FALSE);
 	// sort in reverse order
 	#ifdef USE_STL
 		itemsToRemove.sort(std::greater<int>());
@@ -598,7 +598,7 @@ void ImageComboBoxItems::OptimizeFilter(FilteredPropertyConstants filteredProper
 			SendMessage(hWndICBox, CBEM_DELETEITEM, itemsToRemove.GetAt(itemsToRemove.FindIndex(i)), 0);
 		}
 	#endif
-	CWindowEx(hWndICBox).InternalSetRedraw(TRUE);
+	CWindowEx2(hWndICBox).InternalSetRedraw(TRUE);
 
 	return S_OK;
 }

@@ -51,7 +51,7 @@ LRESULT DriveTypeProperties::OnInitDialog(UINT /*message*/, WPARAM /*wParam*/, L
 	controls.driveTypesWithVolumeNamesList.AddColumn(TEXT(""), 0);
 
 	// setup the toolbar
-	WTL::CRect toolbarRect;
+	CRect toolbarRect;
 	GetClientRect(&toolbarRect);
 	toolbarRect.OffsetRect(0, 2);
 	toolbarRect.left += toolbarRect.right - 46;

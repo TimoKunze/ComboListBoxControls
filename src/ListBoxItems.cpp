@@ -503,7 +503,7 @@ void ListBoxItems::OptimizeFilter(FilteredPropertyConstants filteredProperty)
 {
 	ATLASSERT(IsWindow(hWndLBox));
 
-	CWindowEx(hWndLBox).InternalSetRedraw(FALSE);
+	CWindowEx2(hWndLBox).InternalSetRedraw(FALSE);
 	// sort in reverse order
 	#ifdef USE_STL
 		itemsToRemove.sort(std::greater<int>());
@@ -524,7 +524,7 @@ void ListBoxItems::OptimizeFilter(FilteredPropertyConstants filteredProperty)
 			SendMessage(hWndLBox, LB_DELETESTRING, itemsToRemove.GetAt(itemsToRemove.FindIndex(i)), 0);
 		}
 	#endif
-	CWindowEx(hWndLBox).InternalSetRedraw(TRUE);
+	CWindowEx2(hWndLBox).InternalSetRedraw(TRUE);
 
 	return S_OK;
 }

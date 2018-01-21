@@ -47,7 +47,7 @@
     <ClCompile Include="CommonProperties.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CWindowEx.cpp">
+    <ClCompile Include="CWindowEx2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DriveComboBox.cpp">
@@ -410,7 +410,7 @@
     <ClInclude Include="CompilerFlags.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CWindowEx.h">
+    <ClInclude Include="CWindowEx2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DispIDs.h">

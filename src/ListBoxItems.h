@@ -25,7 +25,7 @@
 #endif
 #include "_IListBoxItemsEvents_CP.h"
 #include "helpers.h"
-#include "CWindowEx.h"
+#include "CWindowEx2.h"
 #include "ListBox.h"
 #include "ListBoxItem.h"
 
