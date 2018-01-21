@@ -237,12 +237,12 @@ LRESULT CMainDlg::OnWindowPosChanged(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM lP
 		LPWINDOWPOS pDetails = reinterpret_cast<LPWINDOWPOS>(lParam);
 
 		if((pDetails->flags & SWP_NOSIZE) == 0) {
-			WTL::CRect rc;
+			CRect rc;
 			GetClientRect(&rc);
 
 			lstUWnd.SetWindowPos(NULL, 0, 0, 193, (rc.Height() - 5) / 2, SWP_NOMOVE);
 			int y = 3;
-			WTL::CRect rect;
+			CRect rect;
 			cmbUWnd.GetWindowRect(&rect);
 			cmbUWnd.SetWindowPos(NULL, 198, y, rect.Width(), rect.Height(), 0);
 			y += rect.Height() + 5;
@@ -405,7 +405,7 @@ void CMainDlg::InsertComboItemsA(void)
 {
 	CComPtr<CBLCtlsLibA::IComboBoxItems> pItems = controls.cmbA->GetComboItems();
 	for(int i = 1; i <= 20; i++) {
-		WTL::CString s;
+		CString s;
 		s.Format(TEXT("Item %i"), i);
 		pItems->Add(_bstr_t(s), -1, i);
 	}
@@ -418,7 +418,7 @@ void CMainDlg::InsertImageComboItemsA(void)
 
 	CComPtr<CBLCtlsLibA::IImageComboBoxItems> pItems = controls.imgcmbA->GetComboItems();
 	for(int i = 1; i <= 20; i++) {
-		WTL::CString s;
+		CString s;
 		s.Format(TEXT("Item %i"), i);
 		pItems->Add(_bstr_t(s), -1, (i - 1) % cImages, i % cImages, 0, 0, i);
 	}
@@ -428,7 +428,7 @@ void CMainDlg::InsertListItemsA(void)
 {
 	CComPtr<CBLCtlsLibA::IListBoxItems> pItems = controls.lstA->GetListItems();
 	for(int i = 1; i <= 20; i++) {
-		WTL::CString s;
+		CString s;
 		s.Format(TEXT("Item %i"), i);
 		pItems->Add(_bstr_t(s), -1, i);
 	}
@@ -438,7 +438,7 @@ void CMainDlg::InsertComboItemsU(void)
 {
 	CComPtr<CBLCtlsLibU::IComboBoxItems> pItems = controls.cmbU->GetComboItems();
 	for(int i = 1; i <= 20; i++) {
-		WTL::CString s;
+		CString s;
 		s.Format(TEXT("Item %i"), i);
 		pItems->Add(_bstr_t(s), -1, i);
 	}
@@ -451,7 +451,7 @@ void CMainDlg::InsertImageComboItemsU(void)
 
 	CComPtr<CBLCtlsLibU::IImageComboBoxItems> pItems = controls.imgcmbU->GetComboItems();
 	for(int i = 1; i <= 20; i++) {
-		WTL::CString s;
+		CString s;
 		s.Format(TEXT("Item %i"), i);
 		pItems->Add(_bstr_t(s), -1, (i - 1) % cImages, i % cImages, 0, 0, i);
 	}
@@ -461,7 +461,7 @@ void CMainDlg::InsertListItemsU(void)
 {
 	CComPtr<CBLCtlsLibU::IListBoxItems> pItems = controls.lstU->GetListItems();
 	for(int i = 1; i <= 20; i++) {
-		WTL::CString s;
+		CString s;
 		s.Format(TEXT("Item %i"), i);
 		pItems->Add(_bstr_t(s), -1, i);
 	}

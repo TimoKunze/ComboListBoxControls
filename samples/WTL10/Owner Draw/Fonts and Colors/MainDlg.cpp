@@ -388,7 +388,7 @@ void __stdcall CMainDlg::OwnerDrawItemCmbFont(LPDISPATCH comboItem, OwnerDrawAct
 		}
 
 		// draw item background
-		WTL::CRect rc(drawingRectangle->Left, drawingRectangle->Top, drawingRectangle->Right, drawingRectangle->Bottom);
+		CRect rc(drawingRectangle->Left, drawingRectangle->Top, drawingRectangle->Right, drawingRectangle->Bottom);
 		CBrush brush;
 		brush.CreateSolidBrush(backClr);
 		dc.FillRect(&rc, brush);
@@ -495,7 +495,7 @@ void __stdcall CMainDlg::OwnerDrawItemLstFont(LPDISPATCH listItem, OwnerDrawActi
 		}
 
 		// draw item background
-		WTL::CRect rc(drawingRectangle->Left, drawingRectangle->Top, drawingRectangle->Right, drawingRectangle->Bottom);
+		CRect rc(drawingRectangle->Left, drawingRectangle->Top, drawingRectangle->Right, drawingRectangle->Bottom);
 		CBrush brush;
 		brush.CreateSolidBrush(backClr);
 		dc.FillRect(&rc, brush);
@@ -538,7 +538,7 @@ void __stdcall CMainDlg::OwnerDrawItemCmbColor(LPDISPATCH comboItem, OwnerDrawAc
 	CComQIPtr<IComboBoxItem> pItem = comboItem;
 	if(pItem) {
 		CDCHandle dc = static_cast<HDC>(LongToHandle(hDC));
-		WTL::CRect rcItem(drawingRectangle->Left, drawingRectangle->Top, drawingRectangle->Right, drawingRectangle->Bottom);
+		CRect rcItem(drawingRectangle->Left, drawingRectangle->Top, drawingRectangle->Right, drawingRectangle->Bottom);
 		RECT rcText = rcItem;
 		rcText.left += 30;
 
@@ -607,7 +607,7 @@ void __stdcall CMainDlg::OwnerDrawItemLstColor(LPDISPATCH listItem, OwnerDrawAct
 	CComQIPtr<IListBoxItem> pItem = listItem;
 	if(pItem) {
 		CDCHandle dc = static_cast<HDC>(LongToHandle(hDC));
-		WTL::CRect rcItem(drawingRectangle->Left, drawingRectangle->Top, drawingRectangle->Right, drawingRectangle->Bottom);
+		CRect rcItem(drawingRectangle->Left, drawingRectangle->Top, drawingRectangle->Right, drawingRectangle->Bottom);
 		RECT rcText = rcItem;
 		rcText.left += 30;
 
