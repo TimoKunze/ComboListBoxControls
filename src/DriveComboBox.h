@@ -6187,10 +6187,10 @@ protected:
 				this->pDraggedItems->Release();
 				this->pDraggedItems = NULL;
 			}
-			if(hDragImageList && autoDestroyImgLst) {
-				ImageList_Destroy(hDragImageList);
+			if(this->hDragImageList && autoDestroyImgLst) {
+				ImageList_Destroy(this->hDragImageList);
 			}
-			hDragImageList = NULL;
+			this->hDragImageList = NULL;
 			autoDestroyImgLst = FALSE;
 			dragImageIsHidden = 1;
 			lastDropTarget = -1;
@@ -6219,7 +6219,7 @@ protected:
 		/// \sa dragImageIsHidden, HideDragImage, IsDragImageVisible
 		void ShowDragImage(BOOL commonDragDropOnly)
 		{
-			if(hDragImageList) {
+			if(this->hDragImageList) {
 				--dragImageIsHidden;
 				if(dragImageIsHidden == 0) {
 					ImageList_DragShowNolock(TRUE);
@@ -6240,7 +6240,7 @@ protected:
 		/// \sa dragImageIsHidden, ShowDragImage, IsDragImageVisible
 		void HideDragImage(BOOL commonDragDropOnly)
 		{
-			if(hDragImageList) {
+			if(this->hDragImageList) {
 				++dragImageIsHidden;
 				if(dragImageIsHidden == 1) {
 					ImageList_DragShowNolock(FALSE);
@@ -6267,39 +6267,39 @@ protected:
 		///
 		/// \param[in] hWndComboBoxEx The image combo box window, that the method will work on to calculate
 		///            the position of the drag image's hotspot.
-		/// \param[in] pDraggedItems The \c IDriveComboBoxItemContainer implementation of the collection of
+		/// \param[in] pDraggedItms The \c IDriveComboBoxItemContainer implementation of the collection of
 		///            the dragged items.
-		/// \param[in] hDragImageList The image list containing the drag image that shall be used to
+		/// \param[in] hDragImgList The image list containing the drag image that shall be used to
 		///            visualize the drag'n'drop operation. If -1, the method will create the drag image
 		///            itself; if \c NULL, no drag image will be displayed.
 		/// \param[in,out] pXHotSpot The x-coordinate (in pixels) of the drag image's hotspot relative to the
-		///                drag image's upper-left corner. If the \c hDragImageList parameter is set to
-		///                \c NULL, this parameter is ignored. If the \c hDragImageList parameter is set to
+		///                drag image's upper-left corner. If the \c hDragImgList parameter is set to
+		///                \c NULL, this parameter is ignored. If the \c hDragImgList parameter is set to
 		///                -1, this parameter is set to the hotspot calculated by the method.
 		/// \param[in,out] pYHotSpot The y-coordinate (in pixels) of the drag image's hotspot relative to the
-		///                drag image's upper-left corner. If the \c hDragImageList parameter is set to
-		///                \c NULL, this parameter is ignored. If the \c hDragImageList parameter is set to
+		///                drag image's upper-left corner. If the \c hDragImgList parameter is set to
+		///                \c NULL, this parameter is ignored. If the \c hDragImgList parameter is set to
 		///                -1, this parameter is set to the hotspot calculated by the method.
 		///
 		/// \return An \c HRESULT error code.
 		///
 		/// \sa EndDrag
-		HRESULT BeginDrag(HWND hWndComboBoxEx, IDriveComboBoxItemContainer* pDraggedItems, HIMAGELIST hDragImageList, PINT pXHotSpot, PINT pYHotSpot)
+		HRESULT BeginDrag(HWND hWndComboBoxEx, IDriveComboBoxItemContainer* pDraggedItms, HIMAGELIST hDragImgList, PINT pXHotSpot, PINT pYHotSpot)
 		{
-			ATLASSUME(pDraggedItems);
-			if(!pDraggedItems) {
+			ATLASSUME(pDraggedItms);
+			if(!pDraggedItms) {
 				return E_INVALIDARG;
 			}
 
 			UINT b = FALSE;
-			if(hDragImageList == static_cast<HIMAGELIST>(LongToHandle(-1))) {
+			if(hDragImgList == static_cast<HIMAGELIST>(LongToHandle(-1))) {
 				OLE_HANDLE h = NULL;
 				OLE_XPOS_PIXELS xUpperLeft = 0;
 				OLE_YPOS_PIXELS yUpperLeft = 0;
-				if(FAILED(pDraggedItems->CreateDragImage(&xUpperLeft, &yUpperLeft, &h))) {
+				if(FAILED(pDraggedItms->CreateDragImage(&xUpperLeft, &yUpperLeft, &h))) {
 					return E_FAIL;
 				}
-				hDragImageList = static_cast<HIMAGELIST>(LongToHandle(h));
+				hDragImgList = static_cast<HIMAGELIST>(LongToHandle(h));
 				b = TRUE;
 
 				DWORD position = GetMessagePos();
@@ -6307,7 +6307,7 @@ protected:
 				::ScreenToClient(hWndComboBoxEx, &mousePosition);
 				if(CWindow(hWndComboBoxEx).GetExStyle() & WS_EX_LAYOUTRTL) {
 					SIZE dragImageSize = {0};
-					ImageList_GetIconSize(hDragImageList, reinterpret_cast<PINT>(&dragImageSize.cx), reinterpret_cast<PINT>(&dragImageSize.cy));
+					ImageList_GetIconSize(hDragImgList, reinterpret_cast<PINT>(&dragImageSize.cx), reinterpret_cast<PINT>(&dragImageSize.cy));
 					*pXHotSpot = xUpperLeft + dragImageSize.cx - mousePosition.x;
 				} else {
 					*pXHotSpot = mousePosition.x - xUpperLeft;
@@ -6320,12 +6320,12 @@ protected:
 			}
 
 			this->autoDestroyImgLst = b;
-			this->hDragImageList = hDragImageList;
+			this->hDragImageList = hDragImgList;
 			if(this->pDraggedItems) {
 				this->pDraggedItems->Release();
 				this->pDraggedItems = NULL;
 			}
-			pDraggedItems->Clone(&this->pDraggedItems);
+			pDraggedItms->Clone(&this->pDraggedItems);
 			ATLASSUME(this->pDraggedItems);
 			this->lastDropTarget = -1;
 
@@ -6339,14 +6339,14 @@ protected:
 		/// \sa BeginDrag
 		void EndDrag(void)
 		{
-			if(pDraggedItems) {
-				pDraggedItems->Release();
-				pDraggedItems = NULL;
+			if(this->pDraggedItems) {
+				this->pDraggedItems->Release();
+				this->pDraggedItems = NULL;
 			}
-			if(autoDestroyImgLst && hDragImageList) {
-				ImageList_Destroy(hDragImageList);
+			if(autoDestroyImgLst && this->hDragImageList) {
+				ImageList_Destroy(this->hDragImageList);
 			}
-			hDragImageList = NULL;
+			this->hDragImageList = NULL;
 			dragImageIsHidden = 1;
 			lastDropTarget = -1;
 			autoScrolling.Reset();
@@ -6357,7 +6357,7 @@ protected:
 		/// \return \c TRUE if we're in drag'n'drop mode; otherwise \c FALSE.
 		BOOL IsDragging(void)
 		{
-			return (pDraggedItems != NULL);
+			return (this->pDraggedItems != NULL);
 		}
 
 		/// \brief <em>Performs any tasks that must be done if \c IDropTarget::DragEnter is called</em>

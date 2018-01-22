@@ -121,7 +121,7 @@ LRESULT CMainDlg::OnInitDialog(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam
 					if(hMem) {
 						LPVOID pIconData = LockResource(hMem);
 						if(pIconData) {
-							HICON hIcon = CreateIconFromResourceEx(reinterpret_cast<PBYTE>(pIconData), SizeofResource(hMod, hResource), TRUE, 0x00030000, 0, 0, LR_DEFAULTCOLOR);
+							hIcon = CreateIconFromResourceEx(reinterpret_cast<PBYTE>(pIconData), SizeofResource(hMod, hResource), TRUE, 0x00030000, 0, 0, LR_DEFAULTCOLOR);
 							if(hIcon) {
 								controls.imageList.AddIcon(hIcon);
 								DestroyIcon(hIcon);
@@ -154,7 +154,7 @@ LRESULT CMainDlg::OnInitDialog(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam
 					if(hMem) {
 						LPVOID pIconData = LockResource(hMem);
 						if(pIconData) {
-							HICON hIcon = CreateIconFromResourceEx(reinterpret_cast<PBYTE>(pIconData), SizeofResource(hMod, hResource), TRUE, 0x00030000, 0, 0, LR_DEFAULTCOLOR);
+							hIcon = CreateIconFromResourceEx(reinterpret_cast<PBYTE>(pIconData), SizeofResource(hMod, hResource), TRUE, 0x00030000, 0, 0, LR_DEFAULTCOLOR);
 							if(hIcon) {
 								controls.imageList.AddIcon(hIcon);
 								DestroyIcon(hIcon);

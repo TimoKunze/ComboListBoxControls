@@ -1362,9 +1362,9 @@ BOOL ImageComboBox::CreateLegacyOLEDragImage(IImageComboBoxItemContainer* pItems
 			}
 			ATLASSUME(pImgLst);
 
-			DWORD flags = 0;
-			pImgLst->GetItemFlags(0, &flags);
-			if(flags & ILIF_ALPHA) {
+			DWORD imageFlags = 0;
+			pImgLst->GetItemFlags(0, &imageFlags);
+			if(imageFlags & ILIF_ALPHA) {
 				// the drag image makes use of the alpha channel
 				IMAGEINFO imageInfo = {0};
 				ImageList_GetImageInfo(hImageList, 0, &imageInfo);
@@ -8815,7 +8815,7 @@ inline HRESULT ImageComboBox::Raise_RecreatedControlWindow(HWND hWnd)
 	if(hWndEdit) {
 		Raise_CreatedEditControlWindow(hWndEdit);
 	} else if(hWndCombo) {
-		HWND hWndEdit = FindWindowEx(containedComboBox, NULL, WC_EDIT, NULL);
+		hWndEdit = FindWindowEx(containedComboBox, NULL, WC_EDIT, NULL);
 		if(hWndEdit) {
 			Raise_CreatedEditControlWindow(hWndEdit);
 		}

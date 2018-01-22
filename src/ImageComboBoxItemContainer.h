@@ -192,13 +192,13 @@ public:
 
 	/// \brief <em>Adds the specified item(s) to the collection</em>
 	///
-	/// \param[in] items The item(s) to add. May be either an item ID, a \c ImageComboBoxItem object or a
+	/// \param[in] itms The item(s) to add. May be either an item ID, a \c ImageComboBoxItem object or a
 	///            \c ImageComboBoxItems collection.
 	///
 	/// \return An \c HRESULT error code.
 	///
 	/// \sa ImageComboBoxItem::get_ID, Count, Remove, RemoveAll
-	virtual HRESULT STDMETHODCALLTYPE Add(VARIANT items);
+	virtual HRESULT STDMETHODCALLTYPE Add(VARIANT itms);
 	/// \brief <em>Clones the collection object</em>
 	///
 	/// Retrieves an exact copy of the collection.

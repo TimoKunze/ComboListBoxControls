@@ -252,14 +252,14 @@ STDMETHODIMP ListBoxItemContainer::get__NewEnum(IUnknown** ppEnumerator)
 }
 
 
-STDMETHODIMP ListBoxItemContainer::Add(VARIANT items)
+STDMETHODIMP ListBoxItemContainer::Add(VARIANT itms)
 {
 	HRESULT hr = E_FAIL;
 	LONG id = -1;
-	switch(items.vt) {
+	switch(itms.vt) {
 		case VT_DISPATCH:
-			if(items.pdispVal) {
-				CComQIPtr<IListBoxItem, &IID_IListBoxItem> pLBItem = items.pdispVal;
+			if(itms.pdispVal) {
+				CComQIPtr<IListBoxItem, &IID_IListBoxItem> pLBItem = itms.pdispVal;
 				if(pLBItem) {
 					// add a single ListBoxItem object
 					if(properties.useIndexes) {
@@ -268,7 +268,7 @@ STDMETHODIMP ListBoxItemContainer::Add(VARIANT items)
 						hr = pLBItem->get_ID(&id);
 					}
 				} else {
-					CComQIPtr<IListBoxItems, &IID_IListBoxItems> pLBItems(items.pdispVal);
+					CComQIPtr<IListBoxItems, &IID_IListBoxItems> pLBItems(itms.pdispVal);
 					if(pLBItems) {
 						// add a ListBoxItems collection
 						CComQIPtr<IEnumVARIANT, &IID_IEnumVARIANT> pEnumerator(pLBItems);
@@ -320,7 +320,7 @@ STDMETHODIMP ListBoxItemContainer::Add(VARIANT items)
 		default:
 			VARIANT v;
 			VariantInit(&v);
-			hr = VariantChangeType(&v, &items, 0, VT_UI4);
+			hr = VariantChangeType(&v, &itms, 0, VT_UI4);
 			id = v.ulVal;
 			break;
 	}

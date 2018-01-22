@@ -255,19 +255,19 @@ STDMETHODIMP DriveComboBoxItemContainer::get__NewEnum(IUnknown** ppEnumerator)
 }
 
 
-STDMETHODIMP DriveComboBoxItemContainer::Add(VARIANT items)
+STDMETHODIMP DriveComboBoxItemContainer::Add(VARIANT itms)
 {
 	HRESULT hr = E_FAIL;
 	LONG id = -1;
-	switch(items.vt) {
+	switch(itms.vt) {
 		case VT_DISPATCH:
-			if(items.pdispVal) {
-				CComQIPtr<IDriveComboBoxItem, &IID_IDriveComboBoxItem> pDCBItem = items.pdispVal;
+			if(itms.pdispVal) {
+				CComQIPtr<IDriveComboBoxItem, &IID_IDriveComboBoxItem> pDCBItem = itms.pdispVal;
 				if(pDCBItem) {
 					// add a single DriveComboBoxItem object
 					hr = pDCBItem->get_ID(&id);
 				} else {
-					CComQIPtr<IDriveComboBoxItems, &IID_IDriveComboBoxItems> pDCBItems(items.pdispVal);
+					CComQIPtr<IDriveComboBoxItems, &IID_IDriveComboBoxItems> pDCBItems(itms.pdispVal);
 					if(pDCBItems) {
 						// add a DriveComboBoxItems collection
 						CComQIPtr<IEnumVARIANT, &IID_IEnumVARIANT> pEnumerator(pDCBItems);
@@ -315,7 +315,7 @@ STDMETHODIMP DriveComboBoxItemContainer::Add(VARIANT items)
 		default:
 			VARIANT v;
 			VariantInit(&v);
-			hr = VariantChangeType(&v, &items, 0, VT_UI4);
+			hr = VariantChangeType(&v, &itms, 0, VT_UI4);
 			id = v.ulVal;
 			break;
 	}

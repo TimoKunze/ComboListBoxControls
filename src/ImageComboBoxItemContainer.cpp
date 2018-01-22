@@ -253,19 +253,19 @@ STDMETHODIMP ImageComboBoxItemContainer::get__NewEnum(IUnknown** ppEnumerator)
 }
 
 
-STDMETHODIMP ImageComboBoxItemContainer::Add(VARIANT items)
+STDMETHODIMP ImageComboBoxItemContainer::Add(VARIANT itms)
 {
 	HRESULT hr = E_FAIL;
 	LONG id = -1;
-	switch(items.vt) {
+	switch(itms.vt) {
 		case VT_DISPATCH:
-			if(items.pdispVal) {
-				CComQIPtr<IImageComboBoxItem, &IID_IImageComboBoxItem> pICBItem = items.pdispVal;
+			if(itms.pdispVal) {
+				CComQIPtr<IImageComboBoxItem, &IID_IImageComboBoxItem> pICBItem = itms.pdispVal;
 				if(pICBItem) {
 					// add a single ImageComboBoxItem object
 					hr = pICBItem->get_ID(&id);
 				} else {
-					CComQIPtr<IImageComboBoxItems, &IID_IImageComboBoxItems> pICBItems(items.pdispVal);
+					CComQIPtr<IImageComboBoxItems, &IID_IImageComboBoxItems> pICBItems(itms.pdispVal);
 					if(pICBItems) {
 						// add a ImageComboBoxItems collection
 						CComQIPtr<IEnumVARIANT, &IID_IEnumVARIANT> pEnumerator(pICBItems);
@@ -313,7 +313,7 @@ STDMETHODIMP ImageComboBoxItemContainer::Add(VARIANT items)
 		default:
 			VARIANT v;
 			VariantInit(&v);
-			hr = VariantChangeType(&v, &items, 0, VT_UI4);
+			hr = VariantChangeType(&v, &itms, 0, VT_UI4);
 			id = v.ulVal;
 			break;
 	}

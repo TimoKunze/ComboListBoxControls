@@ -758,7 +758,7 @@ STDMETHODIMP SourceOLEDataObject::GetCanonicalFormat(LONG* pFormatID, LONG* pInd
 		*pFormatID = RegisterClipboardFormat(CF_RTF);
 	}
 
-	FORMATETC format = {static_cast<CLIPFORMAT>(*pFormatID), NULL, *pDataOrViewAspect, *pIndex, 0};
+	FORMATETC format = {static_cast<CLIPFORMAT>(*pFormatID), NULL, static_cast<DWORD>(*pDataOrViewAspect), *pIndex, 0};
 	switch(*pFormatID) {
 		case CF_BITMAP:
 		case CF_PALETTE:
@@ -804,7 +804,7 @@ STDMETHODIMP SourceOLEDataObject::GetData(LONG formatID, LONG index/* = -1*/, LO
 		formatID = RegisterClipboardFormat(CF_RTF);
 	}
 
-	FORMATETC format = {static_cast<CLIPFORMAT>(formatID), NULL, dataOrViewAspect, index, 0};
+	FORMATETC format = {static_cast<CLIPFORMAT>(formatID), NULL, static_cast<DWORD>(dataOrViewAspect), index, 0};
 	switch(formatID) {
 		case CF_BITMAP:
 		case CF_PALETTE:
@@ -1046,7 +1046,7 @@ STDMETHODIMP SourceOLEDataObject::GetFormat(LONG formatID, LONG index/* = -1*/, 
 	}
 
 	*pFormatAvailable = VARIANT_FALSE;
-	FORMATETC format = {static_cast<CLIPFORMAT>(formatID), NULL, dataOrViewAspect, index, 0};
+	FORMATETC format = {static_cast<CLIPFORMAT>(formatID), NULL, static_cast<DWORD>(dataOrViewAspect), index, 0};
 	switch(formatID) {
 		case CF_BITMAP:
 		case CF_PALETTE:
@@ -1076,7 +1076,7 @@ STDMETHODIMP SourceOLEDataObject::SetData(LONG formatID, VARIANT data/* = _varia
 		formatID = RegisterClipboardFormat(CF_RTF);
 	}
 
-	FORMATETC format = {static_cast<CLIPFORMAT>(formatID), NULL, dataOrViewAspect, index, 0};
+	FORMATETC format = {static_cast<CLIPFORMAT>(formatID), NULL, static_cast<DWORD>(dataOrViewAspect), index, 0};
 	STGMEDIUM storageMedium = {0};
 
 	switch(format.cfFormat) {
