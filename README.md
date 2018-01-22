@@ -1,6 +1,6 @@
 <p align=center>
-  <a href="https://github.com/TimoKunze/ComboListBoxControls/releases/tag/1.5.3">
-    <img alt="Release 1.5.3 Release" src="https://img.shields.io/badge/release-1.5.3-0688CB.svg">
+  <a href="https://github.com/TimoKunze/ComboListBoxControls/releases/tag/1.5.4">
+    <img alt="Release 1.5.4 Release" src="https://img.shields.io/badge/release-1.5.4-0688CB.svg">
   </a>
   <a href="https://github.com/TimoKunze/ComboListBoxControls/releases">
     <img alt="Download ComboListBoxControls" src="https://img.shields.io/badge/download-latest-0688CB.svg">
