@@ -305,8 +305,16 @@ FindDataEntry:
 
 	if(!pDataEntry->pData) {
 		if(secondChance) {
-			// format not supported
-			return DV_E_FORMATETC;
+			if(properties.pOwnerDCBox && properties.pOwnerDCBox->dragDropStatus.IsDragging()) {
+				return S_OK;
+			} else if(properties.pOwnerICBox && properties.pOwnerICBox->dragDropStatus.IsDragging()) {
+				return S_OK;
+			} else if(properties.pOwnerLBox && properties.pOwnerLBox->dragDropStatus.IsDragging()) {
+				return S_OK;
+			} else {
+				// format not supported
+				return DV_E_FORMATETC;
+			}
 		}
 
 		// raise the OLESetData event
